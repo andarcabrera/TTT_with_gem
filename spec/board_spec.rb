@@ -39,4 +39,13 @@ describe Board do
       expect(board.surface[1]).to eq('X')
     end
   end
+
+  describe "#available_spot" do
+    it 'returns true is spot is available' do
+      board = Board.new(markers, 3)
+      board.surface = ["X", "2", "3", "4", "5", "6", "7", "Y", "9"]
+
+      expect(board.available_spot(2)).to be true
+    end
+  end
 end
