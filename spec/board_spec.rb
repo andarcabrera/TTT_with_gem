@@ -29,6 +29,15 @@ describe Board do
     end
   end
 
+  describe "#available_spot" do
+    it 'returns true is spot is available' do
+      board = Board.new(markers, 3)
+      board.surface = ["X", "1", "2", "3", "4", "5", "Y", "7", "8"]
+
+      expect(board.available_spot(2)).to be true
+    end
+  end
+
   describe "#fill_spot" do
     it 'fills spot on board with marker' do
       board = Board.new(markers, 3)
@@ -38,14 +47,63 @@ describe Board do
 
       expect(board.surface[1]).to eq('X')
     end
+
+    it 'does not fill spot on board if spot is not available' do
+      board = Board.new(markers, 3)
+      spot = 8
+      marker = 'X'
+      board.surface = ["0", "X", "2", "3", "4", "5", "6", "7", "Y"]
+      board.fill_spot(spot, marker)
+
+      expect(board.surface[8]).to eq('Y')
+    end
   end
 
-  describe "#available_spot" do
-    it 'returns true is spot is available' do
-      board = Board.new(markers, 3)
-      board.surface = ["X", "2", "3", "4", "5", "6", "7", "Y", "9"]
+  describe 'solved_board?' do
+    context 'checks if any rows are solved' do
+      it 'returns solved row if a row is solved' do
+        board = Board.new(markers, 3)
+        board.surface = ["X", "X", "X", "3", "4", "5", "6", "7", "Y"]
 
-      expect(board.available_spot(2)).to be true
+        expect(board.solved_board?).to be_truthy
+        expect(board.solved_board?).to eq(['X', 'X', 'X'])
+      end
     end
+
+    context 'checks if any columns are solved' do
+      it 'returns solved column if a column is solved' do
+        board = Board.new(markers, 3)
+        board.surface = ["X", "1", "Y", "X", "Y", "5", "X", "7", "Y"]
+
+        expect(board.solved_board?).to be_truthy
+        expect(board.solved_board?).to eq(['X', 'X', 'X'])
+      end
+    end
+
+    context 'checks if any diagonals are solved' do
+      it 'returns solved diagonal if the left diagonal is solved' do
+        board = Board.new(markers, 3)
+        board.surface = ["X", "1", "Y", "3", "X", "Y", "Y", "7", "X"]
+
+        expect(board.solved_board?).to be_truthy
+        expect(board.solved_board?).to eq(['X', 'X', 'X'])
+      end
+
+      it 'returns solved diagonal if the right diagonal is solved' do
+        board = Board.new(markers, 3)
+        board.surface = ["X", "1", "Y", "3", "Y", "X", "Y", "7", "X"]
+
+        expect(board.solved_board?).to be_truthy
+        expect(board.solved_board?).to eq(['Y', 'Y', 'Y'])
+      end
+    end
+
+    it 'returns nothing if a row is not solved' do
+        board = Board.new(markers, 3)
+        board.surface = ["X", "Y", "X", "3", "4", "5", "6", "7", "Y"]
+
+        expect(board.solved_board?).to be_falsey
+        expect(board.solved_board?).to eq nil
+      end
   end
 end
