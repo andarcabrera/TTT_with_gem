@@ -16,6 +16,19 @@ describe Game do
 
       expect(game.size).to eq(9)
     end
+
+    it 'generates a custom sized playing surface' do
+      game = Game.new(4)
+
+      expect(game.size).to eq(16)
+    end
+
+    it 'keeps track of players' do
+      game = Game.new
+      game.add_player
+
+      expect(game.players).to be_a(Array)
+    end
   end
 
 end
