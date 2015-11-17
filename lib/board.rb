@@ -23,6 +23,10 @@ class Board
     row_solved? || column_solved? || diagonals_solved?
   end
 
+  def tied_board?
+   surface.find { |spot| !markers.include?(spot)} == nil && !solved_board?
+  end
+
   private
 
   def row_solved?

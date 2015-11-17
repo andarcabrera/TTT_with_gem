@@ -106,4 +106,27 @@ describe Board do
         expect(board.solved_board?).to eq nil
       end
   end
+
+  describe "#tied_board?" do
+    it 'returns true if the board is tied' do
+      board = Board.new(markers, 3)
+      board.surface = ["X", "Y", "X", "X", "Y", "Y", "Y", "X", "Y"]
+
+      expect(board.tied_board?).to be true
+    end
+
+    it 'returns false if the board is not tied' do
+      board = Board.new(markers, 3)
+      board.surface = ["1", "Y", "X", "X", "Y", "Y", "Y", "X", "Y"]
+
+      expect(board.tied_board?).to be false
+    end
+
+    it 'returns false if the board is solved' do
+      board = Board.new(markers, 3)
+      board.surface = ["X", "Y", "X", "X", "Y", "Y", "X", "X", "Y"]
+
+      expect(board.tied_board?).to be false
+    end
+  end
 end
