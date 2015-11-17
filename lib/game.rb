@@ -16,5 +16,4 @@ class Game
   def add_player(player)
     players << player
   end
-
 end
