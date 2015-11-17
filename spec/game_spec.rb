@@ -25,9 +25,16 @@ describe Game do
 
     it 'keeps track of players' do
       game = Game.new
-      game.add_player
 
       expect(game.players).to be_a(Array)
+    end
+
+    it 'updates the player array' do
+      game = Game.new
+      player = double 'player'
+      game.add_player(player)
+
+      expect(game.players.count).to eq(1)
     end
   end
 
