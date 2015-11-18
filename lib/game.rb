@@ -1,23 +1,21 @@
-require_relative 'board'
-
 class Game
 
-  attr_reader :size, :players, :board
+  attr_reader :players
 
   def initialize(args)
-    @size = args[:size] || 3
     @markers = args.fetch(:markers)
-    @board = Board.new(@markers, size)
+    @board = args.fetch(:board)
     @players = args.fetch(:players)
     @view = args.fetch(:view)
     @output = args.fetch(:output)
   end
 
   def play_game
+    show_board
     until game_over?
       players.each do |player|
-        @output.print(@view.board_to_s(playing_surface))
         move(player)
+        show_board
         break if game_over?
       end
     end
@@ -46,6 +44,10 @@ class Game
     @board.surface
   end
 
+  def set_surface(surface)
+    @board.surface = surface
+  end
+
   def game_over?
     @board.solved_board? != nil || @board.tied_board?
   end
@@ -58,6 +60,10 @@ class Game
 
   def permitted_move(spot)
     @board.available_spot(spot)
+  end
+
+  def show_board
+    @output.print(@view.board_to_s(playing_surface))
   end
 
 end

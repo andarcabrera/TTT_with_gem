@@ -3,8 +3,7 @@ class Board
   attr_reader :markers
   attr_accessor :surface
 
-  def initialize(markers, number_of_rows)
-    size = number_of_rows * number_of_rows
+  def initialize(markers, size = 9)
     @surface = (0..size-1).map{|el| el.to_s}
     @markers = markers
   end
@@ -54,7 +53,7 @@ class Board
 
   def partioned_board
     splitter = Math.sqrt(surface.length).to_i
-    surface.each_slice(3).to_a
+    surface.each_slice(splitter).to_a
   end
 
 end

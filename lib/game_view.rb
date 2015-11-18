@@ -2,10 +2,13 @@ class View
 
   def board_to_s(board)
     i = 0
-    while i < 8
-      puts "|_" + board[i..i+2].join("_|_") + "_|"
-      i += 3
+    row_length = Math.sqrt(board.length).to_i
+    array = []
+    while i < board.length
+       array << "|_" + board[i..i+row_length-1].join("_|_") + "_|"
+      i += row_length
     end
+    array
   end
 
   def move_prompt

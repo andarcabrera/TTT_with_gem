@@ -11,8 +11,9 @@ view = View.new
 player1 = Player.new('X', ui, output, view)
 player2 = Player.new('Y', ui, output, view)
 players = [player1, player2]
+board = Board.new(['X', 'Y'])
 
-args = {:markers => ['X', 'Y'], :players => players, :view => view, :output => output}
+args = {:board => board, :markers => ['X', 'Y'], :players => players, :view => view, :output => output}
 
 game = Game.new(args)
 game.play_game

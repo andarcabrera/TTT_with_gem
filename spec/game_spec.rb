@@ -1,33 +1,21 @@
 require 'rspec'
 require 'spec_helper'
 require_relative '../lib/game'
+require_relative '../lib/board'
 
 describe Game do
 
   let(:markers) { ['X', 'Y'] }
-  let(:player1) { double('player1') }
-  let(:player2) { double('player2') }
+  let(:board) { Board.new(markers) }
+  let(:player1) { double('player1', :marker => 'X') }
+  let(:player2) { double('player2', :marker => 'Y') }
   let(:players) { [player1, player2] }
-  let(:view) { double 'view'}
-  let(:output) { double 'output' }
-  let(:g) { Game.new(:markers => markers, :players => players, :view => view, :output => output) }
-
-  describe "#initialize" do
-    it 'initializes the game with a default size of 3' do
-
-      expect(g.size).to eq(3)
-    end
-
-    it 'initializes the game with a custom size' do
-      g = Game.new(:size => 4, :markers => markers, :players => players, :view => view, :output => output)
-
-      expect(g.size).to eq(4)
-    end
-  end
+  let(:view) { double('view', :board_to_s => nil) }
+  let(:output) { double('output', :print => nil) }
+  let(:g) { Game.new(:board => board, :markers => markers, :players => players, :view => view, :output => output) }
 
   describe "move" do
     it 'advance the player by placing their marker on the board' do
-      allow(player1).to receive(:marker).and_return('X')
       allow(player1).to receive(:pick_spot).and_return('1')
       g.move(player1)
 
@@ -35,8 +23,8 @@ describe Game do
     end
 
     it 'prompts player to pick a spot until they pick a valid spot' do
-      g.board.surface = ["X", "Y", "X", "Y", "4", "5", "6", "7", "8"]
-      allow(player1).to receive(:marker).and_return('X')
+      surface =  ["X", "Y", "X", "Y", "4", "5", "6", "7", "8"]
+      g.set_surface(surface)
       allow(player1).to receive(:pick_spot).and_return('2', '3', '4')
       g.move(player1)
 
@@ -46,8 +34,9 @@ describe Game do
 
   describe '#game_over?' do
     context 'it checks if the game is finished' do
-      it 'checks is the game was won by one of the players' do
-         g.board.surface = ["X", "X", "X", "Y", "4", "Y", "6", "7", "8"]
+      it 'checks if the game was won by one of the players' do
+         surface = ["X", "X", "X", "Y", "4", "Y", "6", "7", "8"]
+         g.set_surface(surface)
 
          expect(g.game_over?).to be true
       end
@@ -63,11 +52,8 @@ describe Game do
   describe "#take_turns" do
     context 'prompts each player to move until the game is over' do
       it 'prompts each player to move until the game is won by a player' do
-        allow(player1).to receive(:marker).and_return('X')
-        allow(player2).to receive(:marker).and_return('Y')
         allow(player1).to receive(:pick_spot).and_return('0', '1', '2', '3')
         allow(player2).to receive(:pick_spot).and_return('3', '4', '5', '6')
-        allow(view).to receive(:board_to_s)
         allow(output).to receive(:print)
 
         g.play_game
@@ -76,12 +62,8 @@ describe Game do
        end
 
        it 'prompts each player to move until the game ends in a tie' do
-        allow(player1).to receive(:marker).and_return('X')
-        allow(player2).to receive(:marker).and_return('Y')
         allow(player1).to receive(:pick_spot).and_return('1', '4', '5', '6', '8')
         allow(player2).to receive(:pick_spot).and_return('0', '2', '3', '7')
-        allow(view).to receive(:board_to_s)
-        allow(output).to receive(:print)
 
         g.play_game
 
@@ -91,6 +73,7 @@ describe Game do
   end
 
   def tied_board
-    g.board.surface = ["X", "Y", "X", "X", "Y", "Y", "Y", "X", "Y"]
+    surface = ["X", "Y", "X", "X", "Y", "Y", "Y", "X", "Y"]
+    g.set_surface(surface)
   end
 end
