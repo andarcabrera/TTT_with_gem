@@ -1,4 +1,4 @@
-require 'board'
+require_relative 'board'
 
 class Game
 
@@ -9,11 +9,14 @@ class Game
     @markers = args.fetch(:markers)
     @board = Board.new(markers, size)
     @players = args.fetch(:players)
+    @view = args.fetch(:view)
+    @output = args.fetch(:output)
   end
 
   def play_game
     until game_over?
       players.each do |player|
+        @output.print(@view.board_to_s(playing_surface))
         move(player)
         break if game_over?
       end

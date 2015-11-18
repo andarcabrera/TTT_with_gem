@@ -79,7 +79,6 @@ describe Game do
         allow(player2).to receive(:marker).and_return('Y')
         allow(player1).to receive(:pick_spot).and_return('1', '4', '5', '6', '8')
         allow(player2).to receive(:pick_spot).and_return('0', '2', '3', '7')
-        p g.playing_surface
         g.play_game
 
         expect(g.playing_surface).to eq(["Y", "X", "Y", "Y", "X", "X", "X", "Y", "X"])
