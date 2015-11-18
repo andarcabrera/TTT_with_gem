@@ -40,7 +40,7 @@ describe Game do
       g.board.surface = ["X", "Y", "X", "Y", "4", "5", "6", "7", "8"]
       allow(player1).to receive(:marker).and_return('X')
       allow(player1).to receive(:pick_spot).and_return('2', '3', '4')
-      p g.move(player1)
+      g.move(player1)
 
       expect(g.playing_surface[4]).to eq('X')
     end
@@ -59,6 +59,31 @@ describe Game do
 
          expect(g.game_over?).to be true
       end
+    end
+  end
+
+  describe "#take_turns" do
+    context 'prompts each player to move until the game is over' do
+      it 'prompts each player to move until the game is won by a player' do
+        allow(player1).to receive(:marker).and_return('X')
+        allow(player2).to receive(:marker).and_return('Y')
+        allow(player1).to receive(:pick_spot).and_return('0', '1', '2', '3')
+        allow(player2).to receive(:pick_spot).and_return('3', '4', '5', '6')
+        g.play_game
+
+        expect(g.playing_surface).to eq(["X", "X", "X", "Y", "Y", "5", "6", "7", "8"])
+       end
+
+       it 'prompts each player to move until the game ends in a tie' do
+        allow(player1).to receive(:marker).and_return('X')
+        allow(player2).to receive(:marker).and_return('Y')
+        allow(player1).to receive(:pick_spot).and_return('1', '4', '5', '6', '8')
+        allow(player2).to receive(:pick_spot).and_return('0', '2', '3', '7')
+        p g.playing_surface
+        g.play_game
+
+        expect(g.playing_surface).to eq(["Y", "X", "Y", "Y", "X", "X", "X", "Y", "X"])
+       end
     end
   end
 

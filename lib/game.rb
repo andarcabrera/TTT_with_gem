@@ -8,7 +8,16 @@ class Game
     @size = args[:size] || 3
     @markers = args.fetch(:markers)
     @board = Board.new(markers, size)
-    @player = args.fetch(:players)
+    @players = args.fetch(:players)
+  end
+
+  def play_game
+    until game_over?
+      players.each do |player|
+        move(player)
+        break if game_over?
+      end
+    end
   end
 
   def move(player)
