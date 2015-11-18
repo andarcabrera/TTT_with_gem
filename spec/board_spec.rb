@@ -30,7 +30,7 @@ describe Board do
   end
 
   describe "#available_spot" do
-    it 'returns true is spot is available' do
+    it 'confirms spot is available' do
       board = Board.new(markers, 3)
       board.surface = ["X", "1", "2", "3", "4", "5", "Y", "7", "8"]
 
@@ -39,23 +39,13 @@ describe Board do
   end
 
   describe "#fill_spot" do
-    it 'fills spot on board with marker' do
+    it 'places marker on the board' do
       board = Board.new(markers, 3)
       spot = '1'
       marker = 'X'
       board.fill_spot(spot, marker)
 
       expect(board.surface[1]).to eq('X')
-    end
-
-    it 'does not fill spot on board if spot is not available' do
-      board = Board.new(markers, 3)
-      spot = 8
-      marker = 'X'
-      board.surface = ["0", "X", "2", "3", "4", "5", "6", "7", "Y"]
-      board.fill_spot(spot, marker)
-
-      expect(board.surface[8]).to eq('Y')
     end
   end
 

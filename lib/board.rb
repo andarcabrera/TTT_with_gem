@@ -14,9 +14,7 @@ class Board
   end
 
   def fill_spot(spot, marker)
-    if available_spot(spot.to_i)
-      surface[spot.to_i] = marker
-    end
+    surface[spot.to_i] = marker
   end
 
   def solved_board?
