@@ -1,4 +1,5 @@
 require 'rspec'
+require 'spec_helper'
 require_relative '../lib/game'
 
 describe Game do
@@ -7,7 +8,9 @@ describe Game do
   let(:player1) { double('player1') }
   let(:player2) { double('player2') }
   let(:players) { [player1, player2] }
-  let(:g) { Game.new(:markers => markers, :players => players) }
+  let(:view) { double 'view'}
+  let(:output) { double 'output' }
+  let(:g) { Game.new(:markers => markers, :players => players, :view => view, :output => output) }
 
   describe "#initialize" do
     it 'initializes the game with a default size of 3' do
@@ -16,14 +19,9 @@ describe Game do
     end
 
     it 'initializes the game with a custom size' do
-      g = Game.new(:size => 4, :markers => markers, :players => players)
+      g = Game.new(:size => 4, :markers => markers, :players => players, :view => view, :output => output)
 
       expect(g.size).to eq(4)
-    end
-
-    it 'initializes the game with markers' do
-
-      expect(g.markers).to include('X', 'Y')
     end
   end
 
@@ -69,6 +67,9 @@ describe Game do
         allow(player2).to receive(:marker).and_return('Y')
         allow(player1).to receive(:pick_spot).and_return('0', '1', '2', '3')
         allow(player2).to receive(:pick_spot).and_return('3', '4', '5', '6')
+        allow(view).to receive(:board_to_s)
+        allow(output).to receive(:print)
+
         g.play_game
 
         expect(g.playing_surface).to eq(["X", "X", "X", "Y", "Y", "5", "6", "7", "8"])
@@ -79,6 +80,9 @@ describe Game do
         allow(player2).to receive(:marker).and_return('Y')
         allow(player1).to receive(:pick_spot).and_return('1', '4', '5', '6', '8')
         allow(player2).to receive(:pick_spot).and_return('0', '2', '3', '7')
+        allow(view).to receive(:board_to_s)
+        allow(output).to receive(:print)
+
         g.play_game
 
         expect(g.playing_surface).to eq(["Y", "X", "Y", "Y", "X", "X", "X", "Y", "X"])

@@ -2,12 +2,12 @@ require_relative 'board'
 
 class Game
 
-  attr_reader :size, :markers, :players, :board
+  attr_reader :size, :players, :board
 
   def initialize(args)
     @size = args[:size] || 3
     @markers = args.fetch(:markers)
-    @board = Board.new(markers, size)
+    @board = Board.new(@markers, size)
     @players = args.fetch(:players)
     @view = args.fetch(:view)
     @output = args.fetch(:output)
