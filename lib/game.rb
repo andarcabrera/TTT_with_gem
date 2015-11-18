@@ -14,17 +14,28 @@ class Game
   def move(player)
     player_marker = player.marker
     spot = pick_spot(player)
-    if permitted_move(spot)
-      fill_spot(spot, player_marker)
-    end
+    fill_spot(spot, player_marker)
   end
 
   def pick_spot(player)
-    player.pick_spot
+    spot = nil
+    until spot
+      spot = player.pick_spot.to_i
+      if permitted_move(spot)
+        spot
+      else
+        spot = nil
+      end
+    end
+    spot
   end
 
   def playing_surface
     @board.surface
+  end
+
+  def game_over?
+    @board.solved_board? != nil || @board.tied_board?
   end
 
   private

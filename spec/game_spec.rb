@@ -7,10 +7,10 @@ describe Game do
   let(:player1) { double('player1') }
   let(:player2) { double('player2') }
   let(:players) { [player1, player2] }
+  let(:g) { Game.new(:markers => markers, :players => players) }
 
   describe "#initialize" do
     it 'initializes the game with a default size of 3' do
-      g = Game.new(:markers => markers, :players => players)
 
       expect(g.size).to eq(3)
     end
@@ -22,7 +22,6 @@ describe Game do
     end
 
     it 'initializes the game with markers' do
-      g = Game.new(:size => 4, :markers => markers, :players => players)
 
       expect(g.markers).to include('X', 'Y')
     end
@@ -30,7 +29,6 @@ describe Game do
 
   describe "move" do
     it 'advance the player by placing their marker on the board' do
-      g = Game.new(:markers => markers, :players => players)
       allow(player1).to receive(:marker).and_return('X')
       allow(player1).to receive(:pick_spot).and_return('1')
       g.move(player1)
@@ -38,21 +36,33 @@ describe Game do
       expect(g.playing_surface[1]).to eq('X')
     end
 
-    it 'does not advance the player if the spot selected is not available' do
-      g = Game.new(:markers => markers, :players => players)
-      g.board.surface = ["X", "1", "2", "3", "4", "5", "6", "7", "8"]
-      allow(player1).to receive(:marker).and_return('Y')
-      allow(player1).to receive(:pick_spot).and_return('0')
-      g.move(player1)
+    it 'prompts player to pick a spot until they pick a valid spot' do
+      g.board.surface = ["X", "Y", "X", "Y", "4", "5", "6", "7", "8"]
+      allow(player1).to receive(:marker).and_return('X')
+      allow(player1).to receive(:pick_spot).and_return('2', '3', '4')
+      p g.move(player1)
 
-      expect(g.playing_surface[0]).to eq('X')
+      expect(g.playing_surface[4]).to eq('X')
     end
+  end
 
-    it 'prompts player to pick a spot on the board on their turn' do
-      g = Game.new(:markers => markers, :players => players)
-      allow(player1).to receive(:pick_spot).and_return('2')
+  describe '#game_over?' do
+    context 'it checks if the game is finished' do
+      it 'checks is the game was won by one of the players' do
+         g.board.surface = ["X", "X", "X", "Y", "4", "Y", "6", "7", "8"]
 
-      expect(g.pick_spot(player1)).to eq('2')
+         expect(g.game_over?).to be true
+      end
+
+      it 'checks is the game ended in a tie' do
+         tied_board
+
+         expect(g.game_over?).to be true
+      end
     end
+  end
+
+  def tied_board
+    g.board.surface = ["X", "Y", "X", "X", "Y", "Y", "Y", "X", "Y"]
   end
 end
