@@ -38,6 +38,14 @@ describe Board do
     end
   end
 
+  describe "#available_spots" do
+    it 'returns all available spots' do
+      board.surface = ["X", "1", "2", "3", "4", "5", "Y", "7", "8"]
+
+      expect(board.available_spots).to include("1", "2", "3", "4", "5", "7", "8")
+    end
+  end
+
   describe "#fill_spot" do
     it 'places marker on the board' do
       spot = '1'
@@ -108,6 +116,12 @@ describe Board do
       board.surface = ["X", "Y", "X", "X", "Y", "Y", "X", "X", "Y"]
 
       expect(board.tied_board?).to be false
+    end
+  end
+
+  describe "#next_marker" do
+    it 'returns the next_marker on the board' do
+      expect(board.next_marker('X')).to eq('Y')
     end
   end
 end

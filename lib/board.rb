@@ -12,6 +12,10 @@ class Board
     !markers.include?(surface[spot.to_i])
   end
 
+  def available_spots
+    surface.select {|spot| !markers.include?(spot)}
+  end
+
   def fill_spot(spot, marker)
     surface[spot.to_i] = marker
   end
@@ -22,6 +26,10 @@ class Board
 
   def tied_board?
    surface.find { |spot| !markers.include?(spot)} == nil && !solved_board?
+  end
+
+  def next_marker(current_marker)
+    markers.select {|marker| marker != current_marker}[0]
   end
 
   private
