@@ -10,7 +10,7 @@ class ComputerPlayer
   end
 
   def pick_spot(board)
-   "2"
+    "2"
   end
 
 
