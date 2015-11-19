@@ -14,4 +14,8 @@ class View
   def move_prompt
     "Please select your spot"
   end
+
+  def invalid_spot
+    "That is not a valid spot. Please select another one."
+  end
 end
