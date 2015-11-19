@@ -18,6 +18,12 @@ describe ComputerPlayer do
       expect(computer.pick_spot(board)).to eq("2")
     end
 
+    it 'picks the winning spot if it can win in the same round' do
+      board.surface = ["Y", "X", "2", "Y", "4", "5", "6", "7", "X"]
+
+      expect(computer.pick_spot(board)).to eq("6")
+    end
+
     it 'picks the spot that would make the other player a winner' do
       board.surface = ["X", "X", "2", "Y", "4", "5", "Y", "7", "X"]
 
