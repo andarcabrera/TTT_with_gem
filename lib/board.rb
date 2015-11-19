@@ -28,8 +28,12 @@ class Board
    surface.find { |spot| !markers.include?(spot)} == nil && !solved_board?
   end
 
-  def next_marker(current_marker)
-    markers.select {|marker| marker != current_marker}[0]
+  def next_marker
+   if available_spots.count.even?
+      markers[1]
+    else
+      markers[0]
+    end
   end
 
   private

@@ -121,7 +121,9 @@ describe Board do
 
   describe "#next_marker" do
     it 'returns the next_marker on the board' do
-      expect(board.next_marker('X')).to eq('Y')
+      board.surface = ["X", "Y", "X", "3", "4", "5", "6", "7", "Y"]
+
+      expect(board.next_marker).to eq('X')
     end
   end
 end
