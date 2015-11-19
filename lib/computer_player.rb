@@ -10,6 +10,7 @@ class ComputerPlayer
   end
 
   def pick_spot(board, depth = 0)
+    return '4' if board.available_spots.count == 9
     best_score = {}
 
     return 0 if board.tied_board?
