@@ -10,9 +10,8 @@ class ComputerPlayer
   end
 
   def pick_spot(board, best_score = {})
-    spot = nil
-    board.available_spots.each do |available_spot|
 
+    board.available_spots.each do |available_spot|
       board.fill_spot(available_spot, marker)
       if board.solved_board?
         best_score[available_spot] = 1
@@ -22,15 +21,14 @@ class ComputerPlayer
       end
 
       board.fill_spot(available_spot, board.next_marker(marker))
-        if board.solved_board?
-          best_score[available_spot] = -1
-        else
-          reset_spot(board, available_spot)
-        end
-
-      spot = best_score.max_by { |key, value| value }[0]
+      if board.solved_board?
+        best_score[available_spot] = -1
+      else
+        reset_spot(board, available_spot)
+      end
     end
-    spot
+
+    spot = best_score.max_by { |key, value| value }[0]
   end
 
   def reset_spot(board, spot)
