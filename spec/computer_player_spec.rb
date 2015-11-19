@@ -44,5 +44,10 @@ describe ComputerPlayer do
 
       expect(available).to include(spot)
     end
+
+    it 'selects spot with the best chance of winning' do
+      board.surface = ["X", "Y", "2", "3", "X", "5", "6", "7", "Y"]
+      expect(computer.pick_spot(board)).to eq('3')
+    end
   end
 end
