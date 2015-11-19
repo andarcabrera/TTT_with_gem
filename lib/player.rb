@@ -9,9 +9,10 @@ class Player
     @view = view
   end
 
-  def pick_spot
+  def pick_spot(board)
     @output.print(@view.move_prompt)
     @input.get_user_input
   end
+
 
 end
