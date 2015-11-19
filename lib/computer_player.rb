@@ -10,7 +10,18 @@ class ComputerPlayer
   end
 
   def pick_spot(board)
-    "2"
+    spot = nil
+    board.available_spots.each do |available_spot|
+      board.fill_spot(available_spot, marker)
+      if board.solved_board? != nil
+        spot = available_spot
+        return spot
+      else
+        board.fill_spot(available_spot, spot)
+        spot = nil
+      end
+    end
+    spot
   end
 
 

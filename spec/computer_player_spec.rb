@@ -20,6 +20,7 @@ describe ComputerPlayer do
 
     it 'picks the winning spot if it can win in the same round' do
       board.surface = ["Y", "X", "2", "Y", "4", "5", "6", "7", "X"]
+      board.solved_board?
 
       expect(computer.pick_spot(board)).to eq("6")
     end
