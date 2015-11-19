@@ -33,7 +33,6 @@ describe ComputerPlayer do
 
     it 'picks a random spot on the board if no winning combination available' do
       board.surface = ["0", "1", "2", "3", "Y", "5", "6", "7", "X"]
-      p computer.pick_spot(board)
 
       expect(computer.pick_spot(board)).not_to be nil
     end
