@@ -9,31 +9,32 @@ class ComputerPlayer
     @view = view
   end
 
-  def pick_spot(board)
+  def pick_spot(board, best_score = {})
     spot = nil
     board.available_spots.each do |available_spot|
+
       board.fill_spot(available_spot, marker)
-      if board.solved_board? != nil
-        spot = available_spot
-        return spot
+      if board.solved_board?
+        best_score[available_spot] = 1
       else
-        board.fill_spot(available_spot, board.next_marker(marker))
-          if board.solved_board? != nil
-            spot = available_spot
-            return spot
-          else
-            board.fill_spot(available_spot, available_spot)
-            spot = nil
-          end
+        best_score[available_spot] = 0
+        reset_spot(board, available_spot)
       end
 
-      if spot == nil
-        spot = board.available_spots.sample
-      end
+      board.fill_spot(available_spot, board.next_marker(marker))
+        if board.solved_board?
+          best_score[available_spot] = -1
+        else
+          reset_spot(board, available_spot)
+        end
 
+      spot = best_score.max_by { |key, value| value }[0]
     end
     spot
   end
 
+  def reset_spot(board, spot)
+    board.fill_spot(spot, spot)
+  end
 
 end
