@@ -30,7 +30,7 @@ class Game
   def pick_spot(player)
     spot = nil
     until spot
-      spot = player.pick_spot.to_i
+      spot = player.pick_spot(@board).to_i
       if permitted_move(spot)
         spot
       else

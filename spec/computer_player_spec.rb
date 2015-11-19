@@ -49,5 +49,11 @@ describe ComputerPlayer do
       board.surface = ["X", "Y", "2", "3", "X", "5", "6", "7", "Y"]
       expect(computer.pick_spot(board)).to eq('3')
     end
+
+    it 'picks spot number 4 if all spots on the board are available' do
+      board.surface = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+
+      expect(computer.pick_spot(board)).to eq('4')
+    end
   end
 end

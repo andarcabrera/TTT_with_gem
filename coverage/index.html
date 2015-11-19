@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-19T11:57:21-06:00">2015-11-19T11:57:21-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-19T12:06:21-06:00">2015-11-19T12:06:21-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4353.21
+         276649.99
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>39</td>
         <td>39</td>
         <td>0</td>
-        <td>12262.3</td>
+        <td>784901.5</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>21</td>
         <td>21</td>
         <td>0</td>
-        <td>4778.1</td>
+        <td>294423.0</td>
       </tr>
       
       <tr>
@@ -186,14 +186,14 @@
           <code class="ruby">  def initialize(markers, size = 9)</code>
         </li>
       
-        <li class="covered" data-hits="297" data-linenumber="7">
-          <span class="hits">297</span>
+        <li class="covered" data-hits="307" data-linenumber="7">
+          <span class="hits">307</span>
           
           <code class="ruby">    @surface = (0..size-1).map{|el| el.to_s}</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="8">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="30" data-linenumber="8">
+          <span class="hits">30</span>
           
           <code class="ruby">    @markers = markers</code>
         </li>
@@ -240,8 +240,8 @@
           <code class="ruby">  def available_spots</code>
         </li>
       
-        <li class="covered" data-hits="139390" data-linenumber="16">
-          <span class="hits">139390</span>
+        <li class="covered" data-hits="8586620" data-linenumber="16">
+          <span class="hits">8586620</span>
           
           <code class="ruby">    surface.select {|spot| !markers.include?(spot)}</code>
         </li>
@@ -264,8 +264,8 @@
           <code class="ruby">  def fill_spot(spot, marker)</code>
         </li>
       
-        <li class="covered" data-hits="18209" data-linenumber="20">
-          <span class="hits">18209</span>
+        <li class="covered" data-hits="1118099" data-linenumber="20">
+          <span class="hits">1118099</span>
           
           <code class="ruby">    surface[spot.to_i] = marker</code>
         </li>
@@ -288,8 +288,8 @@
           <code class="ruby">  def solved_board?</code>
         </li>
       
-        <li class="covered" data-hits="10252" data-linenumber="24">
-          <span class="hits">10252</span>
+        <li class="covered" data-hits="641990" data-linenumber="24">
+          <span class="hits">641990</span>
           
           <code class="ruby">    row_solved? || column_solved? || diagonals_solved?</code>
         </li>
@@ -312,8 +312,8 @@
           <code class="ruby">  def tied_board?</code>
         </li>
       
-        <li class="covered" data-hits="53969" data-linenumber="28">
-          <span class="hits">53969</span>
+        <li class="covered" data-hits="3422816" data-linenumber="28">
+          <span class="hits">3422816</span>
           
           <code class="ruby">   surface.find { |spot| !markers.include?(spot)} == nil &amp;&amp; !solved_board?</code>
         </li>
@@ -336,14 +336,14 @@
           <code class="ruby">  def next_marker</code>
         </li>
       
-        <li class="covered" data-hits="9097" data-linenumber="32">
-          <span class="hits">9097</span>
+        <li class="covered" data-hits="559042" data-linenumber="32">
+          <span class="hits">559042</span>
           
           <code class="ruby">   if available_spots.count.even?</code>
         </li>
       
-        <li class="covered" data-hits="4434" data-linenumber="33">
-          <span class="hits">4434</span>
+        <li class="covered" data-hits="262698" data-linenumber="33">
+          <span class="hits">262698</span>
           
           <code class="ruby">      markers[1]</code>
         </li>
@@ -354,8 +354,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="4663" data-linenumber="35">
-          <span class="hits">4663</span>
+        <li class="covered" data-hits="296344" data-linenumber="35">
+          <span class="hits">296344</span>
           
           <code class="ruby">      markers[0]</code>
         </li>
@@ -396,8 +396,8 @@
           <code class="ruby">  def row_solved?</code>
         </li>
       
-        <li class="covered" data-hits="39466" data-linenumber="42">
-          <span class="hits">39466</span>
+        <li class="covered" data-hits="2464358" data-linenumber="42">
+          <span class="hits">2464358</span>
           
           <code class="ruby">    partioned_board.find {|row| row.uniq.length == 1}</code>
         </li>
@@ -420,8 +420,8 @@
           <code class="ruby">  def column_solved?</code>
         </li>
       
-        <li class="covered" data-hits="31666" data-linenumber="46">
-          <span class="hits">31666</span>
+        <li class="covered" data-hits="2058686" data-linenumber="46">
+          <span class="hits">2058686</span>
           
           <code class="ruby">    partioned_board.transpose.find {|row| row.uniq.length == 1}</code>
         </li>
@@ -444,14 +444,14 @@
           <code class="ruby">  def diagonals_solved?</code>
         </li>
       
-        <li class="covered" data-hits="6486" data-linenumber="50">
-          <span class="hits">6486</span>
+        <li class="covered" data-hits="444472" data-linenumber="50">
+          <span class="hits">444472</span>
           
           <code class="ruby">    diagonals = [left_diagonal, right_diagonal]</code>
         </li>
       
-        <li class="covered" data-hits="19449" data-linenumber="51">
-          <span class="hits">19449</span>
+        <li class="covered" data-hits="1284267" data-linenumber="51">
+          <span class="hits">1284267</span>
           
           <code class="ruby">    diagonals.find {|row| row.uniq.length == 1}</code>
         </li>
@@ -474,20 +474,20 @@
           <code class="ruby">  def left_diagonal</code>
         </li>
       
-        <li class="covered" data-hits="6486" data-linenumber="55">
-          <span class="hits">6486</span>
+        <li class="covered" data-hits="444472" data-linenumber="55">
+          <span class="hits">444472</span>
           
           <code class="ruby">    diagonal = []</code>
         </li>
       
-        <li class="covered" data-hits="25944" data-linenumber="56">
-          <span class="hits">25944</span>
+        <li class="covered" data-hits="1777888" data-linenumber="56">
+          <span class="hits">1777888</span>
           
           <code class="ruby">    partioned_board.select.with_index {|row, index| diagonal &lt;&lt; row[index]}</code>
         </li>
       
-        <li class="covered" data-hits="6486" data-linenumber="57">
-          <span class="hits">6486</span>
+        <li class="covered" data-hits="444472" data-linenumber="57">
+          <span class="hits">444472</span>
           
           <code class="ruby">    diagonal</code>
         </li>
@@ -510,20 +510,20 @@
           <code class="ruby">  def right_diagonal</code>
         </li>
       
-        <li class="covered" data-hits="6486" data-linenumber="61">
-          <span class="hits">6486</span>
+        <li class="covered" data-hits="444472" data-linenumber="61">
+          <span class="hits">444472</span>
           
           <code class="ruby">    diagonal = []</code>
         </li>
       
-        <li class="covered" data-hits="25944" data-linenumber="62">
-          <span class="hits">25944</span>
+        <li class="covered" data-hits="1777888" data-linenumber="62">
+          <span class="hits">1777888</span>
           
           <code class="ruby">    partioned_board.select.with_index {|row, index| diagonal &lt;&lt; row[(index-(row.length - 1)).abs]}</code>
         </li>
       
-        <li class="covered" data-hits="6486" data-linenumber="63">
-          <span class="hits">6486</span>
+        <li class="covered" data-hits="444472" data-linenumber="63">
+          <span class="hits">444472</span>
           
           <code class="ruby">    diagonal</code>
         </li>
@@ -546,14 +546,14 @@
           <code class="ruby">  def partioned_board</code>
         </li>
       
-        <li class="covered" data-hits="31477" data-linenumber="67">
-          <span class="hits">31477</span>
+        <li class="covered" data-hits="2068865" data-linenumber="67">
+          <span class="hits">2068865</span>
           
           <code class="ruby">    splitter = Math.sqrt(surface.length).to_i</code>
         </li>
       
-        <li class="covered" data-hits="31477" data-linenumber="68">
-          <span class="hits">31477</span>
+        <li class="covered" data-hits="2068865" data-linenumber="68">
+          <span class="hits">2068865</span>
           
           <code class="ruby">    surface.each_slice(splitter).to_a</code>
         </li>
@@ -624,26 +624,26 @@
           <code class="ruby">  def initialize(marker, input, output, view)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="6">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="6">
+          <span class="hits">7</span>
           
           <code class="ruby">    @marker = marker</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="7">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="7">
+          <span class="hits">7</span>
           
           <code class="ruby">    @input = input</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="8">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="8">
+          <span class="hits">7</span>
           
           <code class="ruby">    @output = output</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="9">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="9">
+          <span class="hits">7</span>
           
           <code class="ruby">    @view = view</code>
         </li>
@@ -666,8 +666,8 @@
           <code class="ruby">  def pick_spot(board, depth = 0)</code>
         </li>
       
-        <li class="covered" data-hits="9102" data-linenumber="13">
-          <span class="hits">9102</span>
+        <li class="covered" data-hits="559048" data-linenumber="13">
+          <span class="hits">559048</span>
           
           <code class="ruby">    best_score = {}</code>
         </li>
@@ -678,14 +678,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="9102" data-linenumber="15">
-          <span class="hits">9102</span>
+        <li class="covered" data-hits="559048" data-linenumber="15">
+          <span class="hits">559048</span>
           
           <code class="ruby">    return 0 if board.tied_board?</code>
         </li>
       
-        <li class="covered" data-hits="8190" data-linenumber="16">
-          <span class="hits">8190</span>
+        <li class="covered" data-hits="512056" data-linenumber="16">
+          <span class="hits">512056</span>
           
           <code class="ruby">    return -1 if board.solved_board?</code>
         </li>
@@ -696,26 +696,26 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4835" data-linenumber="18">
-          <span class="hits">4835</span>
+        <li class="covered" data-hits="299613" data-linenumber="18">
+          <span class="hits">299613</span>
           
           <code class="ruby">    board.available_spots.each do |available_spot|</code>
         </li>
       
-        <li class="covered" data-hits="9096" data-linenumber="19">
-          <span class="hits">9096</span>
+        <li class="covered" data-hits="559041" data-linenumber="19">
+          <span class="hits">559041</span>
           
           <code class="ruby">      board.fill_spot(available_spot, board.next_marker)</code>
         </li>
       
-        <li class="covered" data-hits="9096" data-linenumber="20">
-          <span class="hits">9096</span>
+        <li class="covered" data-hits="559041" data-linenumber="20">
+          <span class="hits">559041</span>
           
           <code class="ruby">        best_score[available_spot.to_i] = -1 * pick_spot(board, depth + 1)</code>
         </li>
       
-        <li class="covered" data-hits="9096" data-linenumber="21">
-          <span class="hits">9096</span>
+        <li class="covered" data-hits="559041" data-linenumber="21">
+          <span class="hits">559041</span>
           
           <code class="ruby">      reset_spot(board, available_spot)</code>
         </li>
@@ -732,14 +732,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="13931" data-linenumber="24">
-          <span class="hits">13931</span>
+        <li class="covered" data-hits="858654" data-linenumber="24">
+          <span class="hits">858654</span>
           
           <code class="ruby">    best_spot = best_score.max_by { |key, value| value }[0].to_s</code>
         </li>
       
-        <li class="covered" data-hits="13931" data-linenumber="25">
-          <span class="hits">13931</span>
+        <li class="covered" data-hits="858654" data-linenumber="25">
+          <span class="hits">858654</span>
           
           <code class="ruby">    minimax_score = best_score.max_by { |key, value| value }[1].to_i</code>
         </li>
@@ -750,8 +750,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4835" data-linenumber="27">
-          <span class="hits">4835</span>
+        <li class="covered" data-hits="299613" data-linenumber="27">
+          <span class="hits">299613</span>
           
           <code class="ruby">    depth == 0 ? best_spot : minimax_score</code>
         </li>
@@ -786,8 +786,8 @@
           <code class="ruby">  def reset_spot(board, spot)</code>
         </li>
       
-        <li class="covered" data-hits="9096" data-linenumber="33">
-          <span class="hits">9096</span>
+        <li class="covered" data-hits="559041" data-linenumber="33">
+          <span class="hits">559041</span>
           
           <code class="ruby">    board.fill_spot(spot, spot)</code>
         </li>
@@ -1023,7 +1023,7 @@
         <li class="covered" data-hits="18" data-linenumber="33">
           <span class="hits">18</span>
           
-          <code class="ruby">      spot = player.pick_spot.to_i</code>
+          <code class="ruby">      spot = player.pick_spot(@board).to_i</code>
         </li>
       
         <li class="covered" data-hits="18" data-linenumber="34">
