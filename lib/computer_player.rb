@@ -20,6 +20,14 @@ class ComputerPlayer
         board.fill_spot(available_spot, spot)
         spot = nil
       end
+      board.fill_spot(available_spot.to_i, board.next_marker(marker))
+      if board.solved_board? != nil
+        spot = available_spot
+        return spot
+      else
+        board.fill_spot(available_spot, spot)
+        spot = nil
+      end
     end
     spot
   end
