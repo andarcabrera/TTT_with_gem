@@ -11,7 +11,12 @@ class Player
 
   def pick_spot(board)
     @output.print(@view.move_prompt)
-    @input.get_user_input
+    spot = @input.get_user_input
+    until board.available_spots.include?(spot)
+      @output.print(@view.invalid_spot)
+      spot = @input.get_user_input
+    end
+    spot
   end
 
 

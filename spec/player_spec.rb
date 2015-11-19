@@ -7,7 +7,7 @@ describe Player do
 
   let(:input) { double('input') }
   let(:output) { double('output', :move_prompt => nil, :print => nil) }
-  let(:view) { double('view', :move_prompt => nil) }
+  let(:view) { double('view', :move_prompt => nil, :invalid_spot => nil) }
   let(:player) { Player.new('X', input, output, view) }
   let(:board) { Board.new(['X', 'Y']) }
 
