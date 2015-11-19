@@ -12,6 +12,12 @@ describe View do
     end
   end
 
+  describe "#invalid spot" do
+    it 'displays an invalid spot warning' do
+      expect(view.invalid_spot).to eq("That is not a valid spot. Please select another one.")
+    end
+  end
+
   describe "#board_to_s" do
     it 'displays the board' do
       board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
