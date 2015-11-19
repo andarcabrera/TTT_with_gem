@@ -17,17 +17,14 @@ class ComputerPlayer
         spot = available_spot
         return spot
       else
-        board.fill_spot(available_spot, available_spot)
-        spot = nil
-      end
-
-      board.fill_spot(available_spot.to_i, board.next_marker(marker))
-      if board.solved_board? != nil
-        spot = available_spot
-        return spot
-      else
-        board.fill_spot(available_spot, available_spot)
-        spot = nil
+        board.fill_spot(available_spot, board.next_marker(marker))
+          if board.solved_board? != nil
+            spot = available_spot
+            return spot
+          else
+            board.fill_spot(available_spot, available_spot)
+            spot = nil
+          end
       end
 
       if spot == nil

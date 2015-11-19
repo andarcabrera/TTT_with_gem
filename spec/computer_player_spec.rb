@@ -36,5 +36,13 @@ describe ComputerPlayer do
 
       expect(computer.pick_spot(board)).not_to be nil
     end
+
+    it 'random spot is included in the available spots' do
+      board.surface = ["X", "1", "2", "3", "Y", "5", "6", "X", "8"]
+      available = board.available_spots
+      spot = computer.pick_spot(board)
+
+      expect(available).to include(spot)
+    end
   end
 end
