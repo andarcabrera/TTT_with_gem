@@ -22,8 +22,15 @@ describe PlayerInfo do
     end
 
     it 'asks for player marker' do
+      allow(input).to receive(:get_user_input).and_return('X')
 
       expect(info.ask_for_marker).to eq("X")
+    end
+
+    it 'ask for player marker' do
+      allow(input).to receive(:get_user_input).and_return('Y')
+
+      expect(info.ask_for_marker).to eq("Y")
     end
 
 
