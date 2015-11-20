@@ -11,7 +11,14 @@ class PlayerFactory
 
   def players
     players = []
-    player_info.each { |player_info| players << HumanPlayer.new(player_info, @input, @output, @view)}
+    player_info.each do |info|
+      if info[0] == "computer"
+        p info
+        players << ComputerPlayer.new(info, @input, @output, @view)
+      else
+        players << HumanPlayer.new(info, @input, @output, @view)
+      end
+    end
     players
   end
 
