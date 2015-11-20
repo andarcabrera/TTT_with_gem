@@ -1,3 +1,5 @@
+require 'pry'
+
 class PlayerInfo
 
   def initialize(input, output, view, setup)
@@ -5,6 +7,7 @@ class PlayerInfo
     @output = output
     @view = view
     @setup = setup
+    @markers = []
   end
 
   def player_info
@@ -26,10 +29,23 @@ class PlayerInfo
 
   def ask_for_marker(name)
     @output.print(@view.ask_for_marker(name))
-    @input.get_user_input
+    marker = nil
+    while marker.nil?
+      marker = @input.get_user_input
+      if valid_marker?(marker)
+        @markers << marker
+      else
+        marker = nil
+      end
+    end
+    marker
   end
 
   def game_type
     @setup.select_game_type
+  end
+
+  def valid_marker?(marker)
+    !@markers.include?(marker)
   end
 end

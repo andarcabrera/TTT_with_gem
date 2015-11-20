@@ -61,5 +61,20 @@ describe PlayerInfo do
         expect(info.player_info).to eq([['Doug', 'X'], ['Mike', 'Y']])
       end
     end
+
+    context 'game type is human vs.human' do
+      it 'stores the information for 2 human player if option one selected in setup' do
+        allow(input).to receive("get_user_input").and_return('Anda', 'X', 'Alex', 'Y')
+
+        expect(info.player_info).to eq([['Anda', 'X'], ['Alex', 'Y']])
+      end
+
+       it 'stores the information for 2 human player if option one selected in setup' do
+        allow(input).to receive(:get_user_input).and_return('Doug', 'X', 'Mike', 'Y')
+        allow(setup).to receive(:selec_game_type).and_return('1')
+
+        expect(info.player_info).to eq([['Doug', 'X'], ['Mike', 'Y']])
+      end
+    end
   end
 end
