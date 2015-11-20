@@ -5,7 +5,9 @@ class PlayerInfo
   end
 
   def player_names
-    "Anda"
+    names = []
+    2.times { names << ask_for_name }
+    names
   end
 
   def ask_for_name

@@ -40,6 +40,12 @@ describe PlayerInfo do
       expect(info.player_names).to include("Anda")
     end
 
+    it 'stores the player names' do
+      allow(input).to receive(:get_user_input).and_return('Anda', 'Doug')
+
+      expect(info.player_names).to include('Anda', 'Doug')
+    end
+
 
   end
 end
