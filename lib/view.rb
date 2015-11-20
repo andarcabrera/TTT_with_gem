@@ -19,6 +19,14 @@ class View
     "That is not a valid spot. Please select another one."
   end
 
+  def ask_for_name
+    "Enter player name."
+  end
+
+  def ask_for_marker(name)
+    "Enter marker for player #{name}."
+  end
+
   def select_game_type
     "\nEnter corresponding number to select game type:\n\n1. \t Human vs. Human\n2. \t Human vs. Computer\n3. \t Computer vs. Computer"
   end

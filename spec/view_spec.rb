@@ -18,6 +18,18 @@ describe View do
     end
   end
 
+  describe "#ask_for_name" do
+    it 'requests player_name' do
+      expect(view.ask_for_name).to eq("Enter player name.")
+    end
+  end
+
+  describe "#ask_for_marker" do
+    it 'requests player marker' do
+      expect(view.ask_for_marker("Anda")).to eq("Enter marker for player Anda.")
+    end
+  end
+
   describe "#select_game_type" do
     it 'displays select game type message' do
       expect(view.select_game_type).to eq("\nEnter corresponding number to select game type:\n\n1. \t Human vs. Human\n2. \t Human vs. Computer\n3. \t Computer vs. Computer")

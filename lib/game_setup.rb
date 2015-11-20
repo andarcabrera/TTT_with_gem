@@ -18,5 +18,4 @@ class GameSetup
   def valid_selection?(selection)
     ['1', '2', '3'].include?(selection)
   end
-
 end
