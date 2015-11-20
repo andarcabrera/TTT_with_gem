@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/andacabrera29/Desktop/TTT_TDD/lib/player.rb": [
+      "/Users/andacabrera29/Desktop/TTT_TDD/lib/human_player.rb": [
         1,
         null,
         1,
@@ -22,6 +22,45 @@
         null,
         2,
         null,
+        null,
+        null,
+        null
+      ],
+      "/Users/andacabrera29/Desktop/TTT_TDD/lib/computer_player.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        7,
+        7,
+        7,
+        7,
+        null,
+        null,
+        1,
+        9103,
+        9102,
+        null,
+        9102,
+        8190,
+        null,
+        4835,
+        9096,
+        9096,
+        9096,
+        null,
+        null,
+        13931,
+        13931,
+        null,
+        4835,
+        null,
+        null,
+        1,
+        null,
+        1,
+        9096,
         null,
         null,
         null
@@ -170,7 +209,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/TTT_TDD/lib/game_view.rb": [
+      "/Users/andacabrera29/Desktop/TTT_TDD/lib/view.rb": [
         1,
         null,
         1,
@@ -209,46 +248,12 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/TTT_TDD/lib/computer_player.rb": [
+      "/Users/andacabrera29/Desktop/TTT_TDD/lib/players/player.rb": [
         1,
-        null,
-        1,
-        null,
-        1,
-        7,
-        7,
-        7,
-        7,
-        null,
-        null,
-        1,
-        9103,
-        9102,
-        null,
-        9102,
-        8190,
-        null,
-        4835,
-        9096,
-        9096,
-        9096,
-        null,
-        null,
-        13931,
-        13931,
-        null,
-        4835,
-        null,
-        null,
-        1,
-        null,
-        1,
-        9096,
-        null,
         null,
         null
       ]
     },
-    "timestamp": 1447957189
+    "timestamp": 1448031776
   }
 }

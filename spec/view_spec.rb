@@ -1,6 +1,6 @@
 require 'rspec'
 require 'spec_helper'
-require_relative '../lib/game_view'
+require_relative '../lib/view'
 
 describe View do
 
