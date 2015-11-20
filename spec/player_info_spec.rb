@@ -20,5 +20,12 @@ describe PlayerInfo do
 
       expect(info.ask_for_name).to eq("Alex")
     end
+
+    it 'asks for player marker' do
+
+      expect(info.ask_for_marker).to eq("X")
+    end
+
+
   end
 end
