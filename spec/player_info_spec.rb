@@ -46,6 +46,11 @@ describe PlayerInfo do
       expect(info.player_names).to include('Anda', 'Doug')
     end
 
+    it 'stores the markers' do
+      allow(input).to receive(:get_user_input).and_return('X', 'Y')
+
+      expect(info.markers).to include('X', 'Y')
+    end
 
   end
 end
