@@ -20,6 +20,7 @@ class View
   end
 
   def select_game_type
-    "Enter corresponding number to select game type."
+    "\nEnter corresponding number to select game type:\n\n1. \t Human vs. Human\n2. \t Human vs. Computer\n3. \t Computer vs. Computer"
   end
 end
+

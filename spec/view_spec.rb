@@ -20,7 +20,7 @@ describe View do
 
   describe "#select_game_type" do
     it 'displays select game type message' do
-      expect(view.select_game_type).to eq("Enter corresponding number to select game type.")
+      expect(view.select_game_type).to eq("\nEnter corresponding number to select game type:\n\n1. \t Human vs. Human\n2. \t Human vs. Computer\n3. \t Computer vs. Computer")
     end
   end
 

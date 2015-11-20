@@ -232,9 +232,12 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
-        null
+        null,
+        null,
+        1,
+        1
       ],
       "/Users/andacabrera29/Desktop/TTT_TDD/lib/output.rb": [
         1,
@@ -314,6 +317,6 @@
         null
       ]
     },
-    "timestamp": 1448038100
+    "timestamp": 1448038372
   }
 }
