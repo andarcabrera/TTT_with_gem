@@ -8,7 +8,7 @@ describe HumanPlayer do
   let(:input) { double('input') }
   let(:output) { double('output', :move_prompt => nil, :print => nil) }
   let(:view) { double('view', :move_prompt => nil, :invalid_spot => nil) }
-  let(:player) { HumanPlayer.new('X', input, output, view) }
+  let(:player) { HumanPlayer.new(['Anda', 'X'], input, output, view) }
   let(:board) { Board.new(['X', 'Y']) }
 
   describe '#pick_spot' do

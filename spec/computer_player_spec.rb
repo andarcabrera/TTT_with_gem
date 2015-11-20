@@ -8,7 +8,7 @@ describe ComputerPlayer do
   let(:input) { double('input')}
   let(:output) { double('output', :print => nil)}
   let(:view) { double('view', :computer_thinking => nil)}
-  let(:computer) { ComputerPlayer.new('Y', input, output, view)}
+  let(:computer) { ComputerPlayer.new(['computer', 'Y'], input, output, view)}
   let(:board) { Board.new(['X', 'Y']) }
 
   context 'it picks the best spot on the board' do

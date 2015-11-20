@@ -11,34 +11,6 @@ describe PlayerInfo do
   let(:setup) { double('setup') }
   let(:info) { PlayerInfo.new(input, output, view, setup) }
 
-  xdescribe "#ask_for_name" do
-      it 'asks for player name' do
-        allow(input).to receive(:get_user_input).and_return('Anda')
-
-        expect(info.ask_for_name).to eq("Anda")
-      end
-
-      it 'asks for player name' do
-        allow(input).to receive(:get_user_input).and_return('Alex')
-
-        expect(info.ask_for_name).to eq("Alex")
-      end
-    end
-
-  xdescribe "#ask_for_marker" do
-    it 'asks for player marker' do
-      allow(input).to receive(:get_user_input).and_return('X')
-
-      expect(info.ask_for_marker("Anda")).to eq("X")
-    end
-
-    it 'ask for player marker' do
-      allow(input).to receive(:get_user_input).and_return('Y')
-
-      expect(info.ask_for_marker("Anda")).to eq("Y")
-    end
-  end
-
   describe 'player_info' do
     context 'game type is human vs.human' do
       it 'stores the information for 2 human player if option one selected in setup' do
@@ -70,6 +42,15 @@ describe PlayerInfo do
         allow(setup).to receive(:select_game_type).and_return('3')
 
         expect(info.player_info).to eq([['computer', 'X'], ['computer', 'Y']])
+      end
+    end
+
+    context 'game type is human vs.computer' do
+      it 'stores the information for 1 computer player and 1 human player if option 2 is selected in setup' do
+        allow(input).to receive("get_user_input").and_return('Anda', 'X', 'Y', 'Bla')
+        allow(setup).to receive(:select_game_type).and_return('2')
+
+        expect(info.player_info).to eq([['Anda', 'X'], ['computer', 'Y']])
       end
     end
   end

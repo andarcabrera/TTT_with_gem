@@ -14,6 +14,8 @@ class PlayerInfo
     case game_type
     when '1'
       [human_player_info, human_player_info]
+    when '2'
+      [human_player_info, computer_player_info]
     when '3'
       [computer_player_info, computer_player_info]
     end
