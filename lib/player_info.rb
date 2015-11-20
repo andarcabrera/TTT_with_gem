@@ -12,7 +12,14 @@ class PlayerInfo
 
   def markers
     markers = []
-    2.times { markers << ask_for_marker }
+    until markers.count == 2
+      marker = ask_for_marker
+      if markers.include?(marker)
+        marker = nil
+      else
+        markers << marker
+      end
+    end
     markers
   end
 
