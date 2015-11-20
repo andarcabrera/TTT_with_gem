@@ -11,13 +11,24 @@ class PlayerInfo
   end
 
   def player_info
-    [human_player_info, human_player_info]
+    case game_type
+    when '1'
+      [human_player_info, human_player_info]
+    when '3'
+      [computer_player_info, computer_player_info]
+    end
   end
 
   private
 
   def human_player_info
     name = ask_for_name
+    marker = ask_for_marker(name)
+    [name, marker]
+  end
+
+  def computer_player_info
+    name = 'computer'
     marker = ask_for_marker(name)
     [name, marker]
   end
