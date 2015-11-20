@@ -255,6 +255,10 @@
         2,
         null,
         null,
+        1,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/andacabrera29/Desktop/TTT_TDD/lib/players/player.rb": [
@@ -263,6 +267,6 @@
         null
       ]
     },
-    "timestamp": 1448033806
+    "timestamp": 1448034225
   }
 }
