@@ -9,7 +9,7 @@ class PlayerInfo
   end
 
   def ask_for_marker
-    'X'
+    @input.get_user_input
   end
 
 end
