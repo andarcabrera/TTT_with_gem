@@ -248,6 +248,15 @@
         null,
         null
       ],
+      "/Users/andacabrera29/Desktop/TTT_TDD/lib/game_setup.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/andacabrera29/Desktop/TTT_TDD/lib/player_info.rb": [
         1,
         null,
@@ -294,6 +303,6 @@
         null
       ]
     },
-    "timestamp": 1448036151
+    "timestamp": 1448037534
   }
 }
