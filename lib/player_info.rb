@@ -8,4 +8,8 @@ class PlayerInfo
     @input.get_user_input
   end
 
+  def ask_for_marker
+    'X'
+  end
+
 end
