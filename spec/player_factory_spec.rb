@@ -36,5 +36,15 @@ describe PlayerFactory do
         expect(factory.players[1].class).to be(ComputerPlayer)
       end
     end
+
+    context 'receives data sets for 1 computer player and 1 human player' do
+      it 'creates 1 computer player and 1 human player' do
+        factory = PlayerFactory.new(info, input, output, view)
+        allow(info).to receive(:player_info).and_return([['Anda', 'A'], ['computer', 'Z']])
+
+        expect(factory.players[0].class).to be(HumanPlayer)
+        expect(factory.players[1].class).to be(ComputerPlayer)
+      end
+    end
   end
 end

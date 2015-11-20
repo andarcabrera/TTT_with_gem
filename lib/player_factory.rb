@@ -1,5 +1,3 @@
-require 'pry'
-
 class PlayerFactory
 
   def initialize(info, input, output, view)
@@ -13,7 +11,6 @@ class PlayerFactory
     players = []
     player_info.each do |info|
       if info[0] == "computer"
-        p info
         players << ComputerPlayer.new(info, @input, @output, @view)
       else
         players << HumanPlayer.new(info, @input, @output, @view)
@@ -21,6 +18,8 @@ class PlayerFactory
     end
     players
   end
+
+  private
 
   def player_info
     @info.player_info

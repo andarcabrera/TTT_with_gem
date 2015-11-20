@@ -66,4 +66,7 @@ class Game
     @output.print(@view.board_to_s(playing_surface))
   end
 
+  def welcome
+    @output.print(@view.welcome)
+  end
 end

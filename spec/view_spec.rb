@@ -30,6 +30,12 @@ describe View do
     end
   end
 
+  describe "#welcome" do
+    it 'returns welcome message' do
+      expect(view.welcome).to eq("Welcome to TDD TTT.")
+    end
+  end
+
   describe "#select_game_type" do
     it 'displays select game type message' do
       expect(view.select_game_type).to eq("\nEnter corresponding number to select game type:\n\n1. \t Human vs. Human\n2. \t Human vs. Computer\n3. \t Computer vs. Computer")

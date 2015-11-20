@@ -10,7 +10,7 @@ describe Game do
   let(:player1) { double('player1', :marker => 'X') }
   let(:player2) { double('player2', :marker => 'Y') }
   let(:players) { [player1, player2] }
-  let(:view) { double('view', :board_to_s => nil) }
+  let(:view) { double('view', :board_to_s => nil, :welcome => nil) }
   let(:output) { double('output', :print => nil) }
   let(:g) { Game.new(:board => board, :markers => markers, :players => players, :view => view, :output => output) }
 

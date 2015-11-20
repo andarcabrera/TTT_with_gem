@@ -1,5 +1,3 @@
-require 'pry'
-
 class PlayerInfo
 
   def initialize(input, output, view, setup)

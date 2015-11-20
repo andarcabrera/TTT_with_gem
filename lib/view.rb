@@ -11,6 +11,10 @@ class View
     array
   end
 
+  def welcome
+    "Welcome to TDD TTT."
+  end
+
   def move_prompt
     "Please select your spot"
   end
