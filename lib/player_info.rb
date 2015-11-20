@@ -10,6 +10,12 @@ class PlayerInfo
     names
   end
 
+  def markers
+    markers = []
+    2.times { markers << ask_for_marker }
+    markers
+  end
+
   def ask_for_name
     @input.get_user_input
   end
