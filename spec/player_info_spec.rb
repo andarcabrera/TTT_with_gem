@@ -11,5 +11,11 @@ describe PlayerInfo do
 
       expect(info.ask_for_name).to eq("Anda")
     end
+
+    it 'asks for player name' do
+      info = PlayerInfo.new
+
+      expect(info.ask_for_name).to eq("Alex")
+    end
   end
 end
