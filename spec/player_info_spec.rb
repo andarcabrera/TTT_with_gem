@@ -58,5 +58,10 @@ describe PlayerInfo do
       expect(info.markers).to include('X', 'Y')
     end
 
+    it 'organizes the player info by player' do
+      allow(input).to receive(:get_user_input).and_return('Anda', 'Alex', 'X', 'Y')
+
+      expect(info.player_info).to eq([['Anda', 'Alex'], ['X', 'Y']])
+    end
   end
 end
