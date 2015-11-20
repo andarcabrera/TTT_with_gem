@@ -7,6 +7,10 @@ class PlayerInfo
     @setup = setup
   end
 
+  def player_info
+    [['Anda', 'X'], ['Alex', 'Y']]
+  end
+
   def ask_for_name
     @output.print(@view.ask_for_name)
     @input.get_user_input
