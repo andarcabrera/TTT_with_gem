@@ -38,4 +38,12 @@ describe PlayerInfo do
       expect(info.ask_for_marker("Anda")).to eq("Y")
     end
   end
+
+  describe 'player_info' do
+    it 'stores the information for 2 human player if option one selected in setup' do
+      allow(input).to receive("get_user_input").and_return('Anda', 'X', 'Alex', 'Y')
+
+      expect(info.player_info).to eq(['Anda', 'X'], ['Alex', 'Y'])
+    end
+  end
 end
