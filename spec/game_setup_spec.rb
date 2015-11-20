@@ -5,7 +5,7 @@ require_relative '../lib/game_setup'
 describe GameSetup do
 
   let(:input) { double('input') }
-  let(:setup) { GameSetup.new }
+  let(:setup) { GameSetup.new(input) }
 
   describe "#select_game_type" do
     it 'asks for game type selection' do
