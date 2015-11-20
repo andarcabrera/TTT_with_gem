@@ -52,5 +52,11 @@ describe PlayerInfo do
       expect(info.markers).to include('X', 'Y')
     end
 
+    it 'does not store duplicate markers' do
+      allow(input).to receive(:get_user_input).and_return('X', 'X', 'Y')
+
+      expect(info.markers).to include('X', 'Y')
+    end
+
   end
 end
