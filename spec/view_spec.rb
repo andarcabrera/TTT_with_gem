@@ -18,6 +18,12 @@ describe View do
     end
   end
 
+  describe "#select_game_type" do
+    it 'displays select game type message' do
+      expect(view.select_game_type).to eq("Enter corresponding number to select game type.")
+    end
+  end
+
   describe "#board_to_s" do
     it 'displays the board' do
       board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
