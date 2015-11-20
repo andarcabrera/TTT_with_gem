@@ -61,7 +61,13 @@ describe PlayerInfo do
     it 'organizes the player info by player' do
       allow(input).to receive(:get_user_input).and_return('Anda', 'Alex', 'X', 'Y')
 
-      expect(info.player_info).to eq([['Anda', 'Alex'], ['X', 'Y']])
+      expect(info.player_info).to eq([['Anda', 'X'], ['Alex', 'Y']])
+    end
+
+    it 'organizes the player info by player' do
+      allow(input).to receive(:get_user_input).and_return('Doug', 'Alex', 'X','X','X','X','X', 'Y')
+
+      expect(info.player_info).to eq([['Doug', 'X'], ['Alex', 'Y']])
     end
   end
 end

@@ -4,6 +4,10 @@ class PlayerInfo
     @input = input
   end
 
+  def player_info
+    player_names.zip(markers)
+  end
+
   def player_names
     names = []
     2.times { names << ask_for_name }
