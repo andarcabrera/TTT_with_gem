@@ -13,8 +13,8 @@ player1 = HumanPlayer.new('X', ui, output, view)
 player2 = HumanPlayer.new('Y', ui, output, view)
 player3 = ComputerPlayer.new('C', ui, output, view)
 player4 = ComputerPlayer.new('Z', ui, output, view)
-players = [player1, player4]
-board = Board.new(['X', 'Z'])
+players = [player3, player4]
+board = Board.new(['C', 'Z'])
 
 args = {:board => board, :markers => ['X', 'Y'], :players => players, :view => view, :output => output}
 
