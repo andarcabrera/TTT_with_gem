@@ -18,4 +18,8 @@ class View
   def invalid_spot
     "That is not a valid spot. Please select another one."
   end
+
+  def select_game_type
+    "Enter corresponding number to select game type."
+  end
 end
