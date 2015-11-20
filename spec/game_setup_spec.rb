@@ -13,6 +13,12 @@ describe GameSetup do
 
       expect(setup.select_game_type).to eq('1')
     end
+
+    it 'asks for game type selection' do
+      allow(input).to receive(:get_user_input).and_return('2')
+
+      expect(setup.select_game_type).to eq('2')
+    end
   end
 
 end
