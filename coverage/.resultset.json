@@ -162,6 +162,7 @@
         3,
         3,
         3,
+        3,
         null,
         null,
         1,
@@ -170,11 +171,13 @@
         19,
         19,
         19,
+        19,
         null,
         null,
         null,
         null,
         1,
+        21,
         21,
         21,
         21,
@@ -237,6 +240,10 @@
         null,
         null,
         null,
+        1,
+        22,
+        null,
+        null,
         null
       ],
       "/Users/andacabrera29/Desktop/TTT_TDD/lib/view.rb": [
@@ -251,6 +258,10 @@
         6,
         null,
         2,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         1,
@@ -339,14 +350,6 @@
         null
       ],
       "/Users/andacabrera29/Desktop/TTT_TDD/lib/player_factory.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
         null,
         1,
@@ -395,14 +398,6 @@
         null,
         1,
         8,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
@@ -489,6 +484,6 @@
         null
       ]
     },
-    "timestamp": 1448306384
+    "timestamp": 1448307576
   }
 }

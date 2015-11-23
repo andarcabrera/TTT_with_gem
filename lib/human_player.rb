@@ -11,7 +11,7 @@ class HumanPlayer
   end
 
   def pick_spot(board)
-    @output.print(@view.move_prompt)
+    @output.print(@view.move_prompt(self))
     spot = @input.get_user_input
     until board.available_spots.include?(spot)
       @output.print(@view.invalid_spot)

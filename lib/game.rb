@@ -12,6 +12,7 @@ class Game
 
   def play_game
     show_board
+    dotted_line
     set_markers
     take_turns
     announce_winner
@@ -22,6 +23,7 @@ class Game
       players.each do |player|
         move(player)
         show_board
+        dotted_line
         break if game_over?
       end
     end
@@ -30,6 +32,7 @@ class Game
   def move(player)
     player_marker = player.marker
     spot = pick_spot(player)
+    @output.print(@view.spot_selection(player, spot))
     fill_spot(spot, player_marker)
   end
 
@@ -88,6 +91,10 @@ class Game
     else
       @output.print(@view.tied_message)
     end
+  end
+
+  def dotted_line
+    @output.print(@view.dotted_line)
   end
 
 end

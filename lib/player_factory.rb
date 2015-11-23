@@ -1,11 +1,3 @@
-# require_relative 'input'
-# require_relative 'output'
-# require_relative 'view'
-# require_relative 'player_info'
-# require_relative 'game_setup'
-# require_relative 'human_player'
-# require_relative 'computer_player'
-
 class PlayerFactory
 
   def initialize(input, output, view, info)
@@ -55,14 +47,6 @@ class PlayerFactory
   def valid_choice?(choice)
     ['1', '2'].include?(choice)
   end
-
 end
 
 
-# input = UserInterface.new
-# view = View.new
-# output = Output.new
-# setup = GameSetup.new(input, output, view)
-# info = PlayerInfo.new(input, output, view, setup)
-# factory = PlayerFactory.new(info, input, output, view)
-# p factory.players

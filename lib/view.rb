@@ -12,11 +12,11 @@ class View
   end
 
   def welcome
-    "Welcome to TDD TTT"
+    "\nWelcome to TDD TTT"
   end
 
-  def move_prompt
-    "Please select your spot"
+  def move_prompt(player)
+    "Please select your spot, #{player.name}."
   end
 
   def invalid_entry
@@ -28,7 +28,7 @@ class View
   end
 
   def ask_for_marker(name)
-    "Enter marker for player #{name}."
+    "Enter marker for player = #{name.capitalize}."
   end
 
   def select_game_type
@@ -49,6 +49,10 @@ class View
 
   def tied_message
     "Game ended in a tie."
+  end
+
+  def dotted_line
+    "----------------------"
   end
 end
 
