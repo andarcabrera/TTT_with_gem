@@ -60,3 +60,8 @@ class PlayerInfo
     !@markers.include?(marker)
   end
 end
+
+
+
+# info = PlayerInfo.new(input, output, view, setup)
+# p info.player_info

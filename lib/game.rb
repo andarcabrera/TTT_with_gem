@@ -5,13 +5,19 @@ class Game
   def initialize(args)
     @markers = args.fetch(:markers)
     @board = args.fetch(:board)
-    @players = args.fetch(:players)
+    @factory = args.fetch(:factory)
     @view = args.fetch(:view)
     @output = args.fetch(:output)
+    @players = @factory.players
   end
 
   def play_game
+    welcome
     show_board
+    take_turns
+  end
+
+  def take_turns
     until game_over?
       players.each do |player|
         move(player)
@@ -69,4 +75,5 @@ class Game
   def welcome
     @output.print(@view.welcome)
   end
+
 end

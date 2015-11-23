@@ -126,4 +126,12 @@ describe Board do
       expect(board.next_marker).to eq('X')
     end
   end
+
+  describe "#set_markers" do
+    it 'sets board markers do' do
+      board.set_markers(["D", "G"])
+
+      expect(board.markers).to eq(["D", "G"])
+    end
+  end
 end

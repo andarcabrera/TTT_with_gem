@@ -2,21 +2,23 @@ require_relative 'lib/game'
 require_relative 'lib/board'
 require_relative 'lib/human_player'
 require_relative 'lib/computer_player'
+require_relative 'lib/player_factory'
+require_relative 'lib/player_info'
+require_relative 'lib/game_setup'
 require_relative 'lib/input'
 require_relative 'lib/output'
 require_relative 'lib/view'
 
-ui = UserInterface.new
+input = UserInterface.new
 output = Output.new
 view = View.new
-player1 = HumanPlayer.new('X', ui, output, view)
-player2 = HumanPlayer.new('Y', ui, output, view)
-player3 = ComputerPlayer.new('C', ui, output, view)
-player4 = ComputerPlayer.new('Z', ui, output, view)
-players = [player3, player4]
-board = Board.new(['C', 'Z'])
+setup = GameSetup.new(input, output, view)
+info = PlayerInfo.new(input, output, view, setup)
+factory = PlayerFactory.new(input, output, view, info)
+markers = factory.players.map {|player| player.marker}
+board = Board.new(markers)
 
-args = {:board => board, :markers => ['X', 'Y'], :players => players, :view => view, :output => output}
+args = {:board => board, :markers => markers,  :view => view, :output => output, :factory => factory}
 
 game = Game.new(args)
 game.play_game
