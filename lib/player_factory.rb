@@ -16,12 +16,22 @@ class PlayerFactory
   end
 
   def players
-    case starting_player
-    when 'y'
-      players_array
-    when 'n'
-      players_array.reverse
+    current_players = players_array
+    user_choice = nil
+    while !valid_choice?(user_choice)
+      @output.print(@view.starting_player(current_players))
+      user_choice = @input.get_user_input
+      if user_choice == '1'
+        break
+      elsif user_choice == '2'
+        current_players = current_players.reverse
+        break
+      else
+        @output.print(@view.invalid_entry)
+        user_choice = nil
+      end
     end
+    current_players
   end
 
   private
@@ -42,15 +52,8 @@ class PlayerFactory
     @info.player_info
   end
 
-  def starting_player
-    player = players_array[0]
-    @output.print(@view.starting_player(player))
-    user_choice = @input.get_user_input
-    until user_choice == 'y' || 'n'
-      @output.print(@view.starting_player(player))
-      user_choice = @input.get_user_input
-    end
-    user_choice
+  def valid_choice?(choice)
+    ['1', '2'].include?(choice)
   end
 
 end
