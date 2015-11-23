@@ -1,6 +1,6 @@
 class ComputerPlayer
 
-  attr_reader :marker
+  attr_reader :marker, :name
 
   def initialize(player_info, input, output, view)
     @name = player_info[0]

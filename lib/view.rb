@@ -39,12 +39,16 @@ class View
     "Enter corresponding number for starting player\n1.\t#{players[0].name}\n2.\t#{players[1].name}"
   end
 
+  def spot_selection(player, spot)
+    "#{player.name.capitalize} selected spot # #{spot.to_i}"
+  end
+
   def winner_message(winner)
-    "#{winner.name} won the game"
+    "#{winner.name.capitalize} won the game!"
   end
 
   def tied_message
-    "Game ended in a tie"
+    "Game ended in a tie."
   end
 end
 

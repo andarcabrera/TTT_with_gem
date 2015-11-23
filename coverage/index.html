@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-23T13:12:27-06:00">2015-11-23T13:12:27-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-23T13:19:44-06:00">2015-11-23T13:19:44-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.66%</span></span>
+    (<span class="covered_percent"><span class="green">97.67%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2656.82
+         2636.23
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>11</b> files in total.
-    <b>256</b> relevant lines. 
-    <span class="green"><b>250</b> lines covered</span> and
+    <b>258</b> relevant lines. 
+    <span class="green"><b>252</b> lines covered</span> and
     <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -153,11 +153,11 @@
       <tr>
         <td class="strong"><a href="#cf204b319f02c8d3232d6dfa4b0805b19366480b" class="src_link" title="lib/view.rb">lib/view.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>50</td>
-        <td>27</td>
-        <td>27</td>
+        <td>54</td>
+        <td>29</td>
+        <td>29</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.5</td>
       </tr>
       
     </tbody>
@@ -673,7 +673,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  attr_reader :marker</code>
+          <code class="ruby">  attr_reader :marker, :name</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -2827,8 +2827,8 @@
     <h3>lib/view.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>27</b> relevant lines. 
-      <span class="green"><b>27</b> lines covered</span> and
+      <b>29</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3085,13 +3085,13 @@
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">  def winner_message(winner)</code>
+          <code class="ruby">  def spot_selection(player, spot)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    &quot;#{winner.name} won the game&quot;</code>
+          <code class="ruby">    &quot;#{player.name.capitalize} selected spot # #{spot.to_i}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
@@ -3109,13 +3109,13 @@
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">  def tied_message</code>
+          <code class="ruby">  def winner_message(winner)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">    &quot;Game ended in a tie&quot;</code>
+          <code class="ruby">    &quot;#{winner.name.capitalize} won the game!&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
@@ -3127,10 +3127,34 @@
         <li class="never" data-hits="" data-linenumber="49">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def tied_message</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    &quot;Game ended in a tie.&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby"></code>
