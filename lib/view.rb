@@ -38,5 +38,13 @@ class View
   def starting_player(players)
     "Enter corresponding number for starting player\n1.\t#{players[0].name}\n2.\t#{players[1].name}"
   end
+
+  def winner_message(winner)
+    "#{winner.name} won the game"
+  end
+
+  def tied_message
+    "Game ended in a tie"
+  end
 end
 

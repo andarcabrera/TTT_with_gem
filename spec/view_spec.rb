@@ -36,6 +36,21 @@ describe View do
     end
   end
 
+  describe "#winner_message" do
+    it 'announces the winner' do
+      player = double('player', :name => "Anda")
+
+      expect(view.winner_message(player)).to eq("Anda won the game")
+    end
+  end
+
+  describe "#tied_message" do
+    it 'announces the game ended in a tie' do
+
+      expect(view.tied_message).to eq("Game ended in a tie")
+    end
+  end
+
   describe "#starting_player" do
     it 'asks for confirmation of starting player' do
       player1 = double('player1', :name => "Anda")

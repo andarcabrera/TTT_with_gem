@@ -14,6 +14,7 @@ class Game
     show_board
     set_markers
     take_turns
+    announce_winner
   end
 
   def take_turns
@@ -79,6 +80,14 @@ class Game
   def set_markers
     markers = @players.map {|player| player.marker}
     @board.set_markers(markers)
+  end
+
+  def announce_winner
+    if @board.solved_board?
+      @output.print(@view.winner_message(winner))
+    else
+      @output.print(@view.tied_message)
+    end
   end
 
 end
