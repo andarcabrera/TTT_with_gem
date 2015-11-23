@@ -35,7 +35,12 @@ class PlayerInfo
 
   def ask_for_name
     @output.print(@view.ask_for_name)
-    @input.get_user_input
+    name = @input.get_user_input
+    until name != ""
+      @output.print(@view.ask_for_name)
+      name = @input.get_user_input
+    end
+    name
   end
 
   def ask_for_marker(name)
@@ -47,6 +52,7 @@ class PlayerInfo
         @markers << marker
       else
         marker = nil
+        @output.print(@view.invalid_entry)
       end
     end
     marker
@@ -57,7 +63,7 @@ class PlayerInfo
   end
 
   def valid_marker?(marker)
-    !@markers.include?(marker)
+    !@markers.include?(marker) && marker != ""
   end
 end
 

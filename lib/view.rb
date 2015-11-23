@@ -12,15 +12,15 @@ class View
   end
 
   def welcome
-    "Welcome to TDD TTT."
+    "Welcome to TDD TTT"
   end
 
   def move_prompt
     "Please select your spot"
   end
 
-  def invalid_spot
-    "That is not a valid spot. Please select another one."
+  def invalid_entry
+    "That is not a valid entry. Please select a valid entry."
   end
 
   def ask_for_name

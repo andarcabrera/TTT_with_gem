@@ -15,10 +15,9 @@ view = View.new
 setup = GameSetup.new(input, output, view)
 info = PlayerInfo.new(input, output, view, setup)
 factory = PlayerFactory.new(input, output, view, info)
-markers = factory.players.map {|player| player.marker}
-board = Board.new(markers)
+board = Board.new
 
-args = {:board => board, :markers => markers,  :view => view, :output => output, :factory => factory}
+args = {:board => board, :view => view, :output => output, :factory => factory}
 
 game = Game.new(args)
 game.play_game

@@ -3,7 +3,6 @@ class Game
   attr_reader :players
 
   def initialize(args)
-    @markers = args.fetch(:markers)
     @board = args.fetch(:board)
     @factory = args.fetch(:factory)
     @view = args.fetch(:view)
@@ -12,8 +11,8 @@ class Game
   end
 
   def play_game
-    welcome
     show_board
+    set_markers
     take_turns
   end
 
@@ -72,8 +71,9 @@ class Game
     @output.print(@view.board_to_s(playing_surface))
   end
 
-  def welcome
-    @output.print(@view.welcome)
+  def set_markers
+    markers = @players.map {|player| player.marker}
+    @board.set_markers(markers)
   end
 
 end

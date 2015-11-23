@@ -16,21 +16,41 @@ class PlayerFactory
   end
 
   def players
-    players = []
-    player_info.each do |info|
-      if info[0] == "computer"
-        players << ComputerPlayer.new(info, @input, @output, @view)
-      else
-        players << HumanPlayer.new(info, @input, @output, @view)
-      end
+    case starting_player
+    when 'y'
+      players_array
+    when 'n'
+      players_array.reverse
     end
-    players
   end
 
   private
 
+  def players_array
+    players_array = []
+    player_info.each do |info|
+      if info[0] == "computer"
+        players_array << ComputerPlayer.new(info, @input, @output, @view)
+      else
+        players_array << HumanPlayer.new(info, @input, @output, @view)
+      end
+    end
+    players_array
+  end
+
   def player_info
     @info.player_info
+  end
+
+  def starting_player
+    player = players_array[0]
+    @output.print(@view.starting_player(player))
+    user_choice = @input.get_user_input
+    until user_choice == 'y' || 'n'
+      @output.print(@view.starting_player(player))
+      user_choice = @input.get_user_input
+    end
+    user_choice
   end
 
 end

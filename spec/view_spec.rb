@@ -12,9 +12,9 @@ describe View do
     end
   end
 
-  describe "#invalid spot" do
+  describe "#invalid_entry" do
     it 'displays an invalid spot warning' do
-      expect(view.invalid_spot).to eq("That is not a valid spot. Please select another one.")
+      expect(view.invalid_entry).to eq("That is not a valid entry. Please select a valid entry.")
     end
   end
 
@@ -32,7 +32,7 @@ describe View do
 
   describe "#welcome" do
     it 'returns welcome message' do
-      expect(view.welcome).to eq("Welcome to TDD TTT.")
+      expect(view.welcome).to eq("Welcome to TDD TTT")
     end
   end
 
