@@ -70,6 +70,16 @@ describe Game do
         expect(g.playing_surface).to eq(["Y", "X", "Y", "Y", "X", "X", "X", "Y", "X"])
        end
     end
+
+    describe "#winner" do
+      it 'returns the winner of the game' do
+        allow(player1).to receive(:pick_spot).and_return('0', '1', '2', '3')
+        allow(player2).to receive(:pick_spot).and_return('3', '4', '5', '6')
+        g.play_game
+
+        expect(g.winner).to eq(player1)
+      end
+    end
   end
 
   def tied_board

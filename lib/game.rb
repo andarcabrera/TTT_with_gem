@@ -57,6 +57,11 @@ class Game
     @board.solved_board? != nil || @board.tied_board?
   end
 
+  def winner
+    winner_marker = @board.solved_board?[0]
+    @players.select {|player| player.marker == winner_marker}[0]
+  end
+
   private
 
   def fill_spot(spot, marker)
