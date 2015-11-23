@@ -21,7 +21,7 @@ describe View do
 
   describe "#ask_for_name" do
     it 'requests player_name' do
-      expect(view.ask_for_name).to eq("Enter player name.")
+      expect(view.ask_for_name).to eq("Enter human player name.")
     end
   end
 
@@ -33,7 +33,19 @@ describe View do
 
   describe "#welcome" do
     it 'returns welcome message' do
-      expect(view.welcome).to eq("\nWelcome to TDD TTT")
+      expect(view.welcome).to eq("    .___________. __    ______    .___________.    ___       ______
+    |           ||  |  /      |   |           |   /   \     /      |
+    `---|  |----`|  | |  ,----'   `---|  |----`  /  ^  \   |  ,----'
+        |  |     |  | |  |            |  |      /  /_\  \  |  |
+        |  |     |  | |  `----.       |  |     /  _____  \ |  `----.
+        |__|     |__|  \______|       |__|    /__/     \__\ \______|
+
+                   .___________.  ______    _______
+                   |           | /  __  \  |   ____|
+                   `---|  |----`|  |  |  | |  |__
+                       |  |     |  |  |  | |   __|
+                       |  |     |  `--'  | |  |____
+                       |__|      \______/  |_______|   ")
     end
   end
 

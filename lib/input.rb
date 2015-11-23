@@ -1,4 +1,4 @@
-class UserInterface
+class Input
 
   def get_user_input
     STDIN.gets.chomp

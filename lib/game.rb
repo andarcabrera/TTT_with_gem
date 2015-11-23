@@ -54,7 +54,7 @@ class Game
   end
 
   def set_surface(surface)
-    @board.surface = surface
+    @board.set_surface(surface)
   end
 
   def game_over?

@@ -12,7 +12,19 @@ class View
   end
 
   def welcome
-    "\nWelcome to TDD TTT"
+    "    .___________. __    ______    .___________.    ___       ______
+    |           ||  |  /      |   |           |   /   \     /      |
+    `---|  |----`|  | |  ,----'   `---|  |----`  /  ^  \   |  ,----'
+        |  |     |  | |  |            |  |      /  /_\  \  |  |
+        |  |     |  | |  `----.       |  |     /  _____  \ |  `----.
+        |__|     |__|  \______|       |__|    /__/     \__\ \______|
+
+                   .___________.  ______    _______
+                   |           | /  __  \  |   ____|
+                   `---|  |----`|  |  |  | |  |__
+                       |  |     |  |  |  | |   __|
+                       |  |     |  `--'  | |  |____
+                       |__|      \______/  |_______|   "
   end
 
   def move_prompt(player)
@@ -24,7 +36,7 @@ class View
   end
 
   def ask_for_name
-    "Enter player name."
+    "Enter human player name."
   end
 
   def ask_for_marker(name)
@@ -36,7 +48,7 @@ class View
   end
 
   def starting_player(players)
-    "Enter corresponding number for starting player\n1.\t#{players[0].name}\n2.\t#{players[1].name}"
+    "Enter corresponding number for starting player\n1.\t#{players[0].name.capitalize}\n2.\t#{players[1].name.capitalize}"
   end
 
   def spot_selection(player, spot)

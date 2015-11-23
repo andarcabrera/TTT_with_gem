@@ -34,6 +34,13 @@ describe PlayerInfo do
 
         expect(info.player_info).to eq([['Doug', 'X'], ['Mike', 'Y']])
       end
+
+      it 'asks for player name until it receives a valid one' do
+        allow(input).to receive(:get_user_input).and_return('', 'Eli','X', 'Mike', 'X', 'Y')
+        allow(setup).to receive(:select_game_type).and_return('1')
+
+        expect(info.player_info).to eq([['Eli', 'X'], ['Mike', 'Y']])
+      end
     end
 
     context 'game type is computer vs.computer' do

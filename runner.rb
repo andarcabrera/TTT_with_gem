@@ -9,7 +9,7 @@ require_relative 'lib/input'
 require_relative 'lib/output'
 require_relative 'lib/view'
 
-input = UserInterface.new
+input = Input.new
 output = Output.new
 view = View.new
 setup = GameSetup.new(input, output, view)

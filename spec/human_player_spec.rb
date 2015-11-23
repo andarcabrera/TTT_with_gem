@@ -7,7 +7,7 @@ describe HumanPlayer do
 
   let(:input) { double('input') }
   let(:output) { double('output', :move_prompt => nil, :print => nil) }
-  let(:view) { double('view', :move_prompt => nil, :invalid_spot => nil) }
+  let(:view) { double('view', :move_prompt => nil, :invalid_entry => nil) }
   let(:player) { HumanPlayer.new(['Anda', 'X'], input, output, view) }
   let(:board) { Board.new(['X', 'Y']) }
 
@@ -19,7 +19,7 @@ describe HumanPlayer do
     end
 
     it 'picks an available spot on the board' do
-      board.surface = ["X", "Y", "X", "X", "4", "5", "6", "7", "Y"]
+      board.set_surface(["X", "Y", "X", "X", "4", "5", "6", "7", "Y"])
 
       allow(input).to receive(:get_user_input).and_return('1', '2', '3', '4')
       expect(player.pick_spot(board)).to eq('4')

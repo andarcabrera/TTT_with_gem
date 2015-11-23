@@ -1,8 +1,5 @@
 class Board
 
-  attr_reader :markers
-  attr_accessor :surface
-
   def initialize(markers = [], size = 9)
     @surface = (0..size-1).map{|el| el.to_s}
     @markers = markers
@@ -38,6 +35,18 @@ class Board
 
   def set_markers(markers)
     @markers = markers
+  end
+
+  def markers
+    @markers
+  end
+
+  def surface
+    @surface
+  end
+
+  def set_surface(surface)
+    @surface = surface
   end
 
   private

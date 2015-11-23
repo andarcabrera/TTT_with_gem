@@ -62,6 +62,14 @@ describe PlayerFactory do
 
         expect(factory.players[0].class).to be(ComputerPlayer)
       end
+
+      it 'it asks for choice of starting player until it receives valid entry' do
+        factory = PlayerFactory.new(input, output, view, info)
+        allow(info).to receive(:player_info).and_return([['Anda', 'X'], ['computer', 'Y']])
+        allow(input).to receive(:get_user_input).and_return('0', '2')
+
+        expect(factory.players[0].class).to be(ComputerPlayer)
+      end
     end
   end
 end
