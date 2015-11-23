@@ -34,5 +34,9 @@ class View
   def select_game_type
     "\nEnter corresponding number to select game type:\n\n1. \t Human vs. Human\n2. \t Human vs. Computer\n3. \t Computer vs. Computer"
   end
+
+  def starting_player(players)
+    "Enter corresponding number for starting player\n1.\t#{players[0].name}\n2.\t#{players[1].name}"
+  end
 end
 

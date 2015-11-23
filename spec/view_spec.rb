@@ -36,6 +36,16 @@ describe View do
     end
   end
 
+  describe "#starting_player" do
+    it 'asks for confirmation of starting player' do
+      player1 = double('player1', :name => "Anda")
+      player2 = double('player2', :name => "Eli")
+      players = [player1, player2]
+
+      expect(view.starting_player(players)).to eq("Enter corresponding number for starting player\n1.\tAnda\n2.\tEli")
+    end
+  end
+
   describe "#select_game_type" do
     it 'displays select game type message' do
       expect(view.select_game_type).to eq("\nEnter corresponding number to select game type:\n\n1. \t Human vs. Human\n2. \t Human vs. Computer\n3. \t Computer vs. Computer")
