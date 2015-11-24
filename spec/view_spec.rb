@@ -89,6 +89,12 @@ describe View do
     end
   end
 
+  describe "#ask_for_board_setup" do
+    it 'displays select board size message' do
+      expect(view.ask_for_board_setup).to eq("\nEnter corresponding number to select board size:\n\n1. \t 3X3 board\n2. \t 4X4 board\n")
+    end
+  end
+
   describe "#board_to_s" do
     it 'displays the board' do
       board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]

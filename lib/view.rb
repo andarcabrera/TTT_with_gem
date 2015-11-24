@@ -47,6 +47,10 @@ class View
     "\nEnter corresponding number to select game type:\n\n1. \t Human vs. Human\n2. \t Human vs. Computer\n3. \t Computer vs. Computer"
   end
 
+  def ask_for_board_setup
+    "\nEnter corresponding number to select board size:\n\n1. \t 3X3 board\n2. \t 4X4 board\n"
+  end
+
   def starting_player(players)
     "Enter corresponding number to select players order:\n1.\t#{players[0].name.capitalize}\n2.\t#{players[1].name.capitalize}"
   end
