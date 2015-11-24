@@ -79,7 +79,7 @@ describe View do
       player2 = double('player2', :name => "Eli")
       players = [player1, player2]
 
-      expect(view.starting_player(players)).to eq("Enter corresponding number for starting player\n1.\tAnda\n2.\tEli")
+      expect(view.starting_player(players)).to eq("Enter corresponding number to select players order:\n1.\tAnda\n2.\tEli")
     end
   end
 
@@ -93,7 +93,7 @@ describe View do
     it 'displays the board' do
       board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
       expect(view.board_to_s(board).count).to eq(3)
-      expect(view.board_to_s(board)).to include("|_0_|_1_|_2_|", "|_3_|_4_|_5_|", "|_6_|_7_|_8_|")
+      expect(view.board_to_s(board)).to include("_0_|_1_|_2_", "_3_|_4_|_5_", "_6_|_7_|_8_")
     end
   end
 

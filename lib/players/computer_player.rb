@@ -1,14 +1,6 @@
-class ComputerPlayer
+require_relative 'player'
 
-  attr_reader :marker, :name
-
-  def initialize(player_info, input, output, view)
-    @name = player_info[0]
-    @marker = player_info[1]
-    @input = input
-    @output = output
-    @view = view
-  end
+class ComputerPlayer < Player
 
   def pick_spot(board, depth = 0)
     return '4' if board.available_spots.count == 9

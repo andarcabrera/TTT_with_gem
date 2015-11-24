@@ -1,6 +1,6 @@
 require 'rspec'
 require 'spec_helper'
-require_relative '../lib/computer_player'
+require_relative '../lib/players/computer_player'
 require_relative '../lib/board'
 
 describe ComputerPlayer do

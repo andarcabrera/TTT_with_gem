@@ -1,6 +1,6 @@
 require 'rspec'
 require 'spec_helper'
-require_relative '../lib/human_player'
+require_relative '../lib/players/human_player'
 require_relative '../lib/board'
 
 describe HumanPlayer do

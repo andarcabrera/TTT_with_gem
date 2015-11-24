@@ -5,7 +5,7 @@ class View
     row_length = Math.sqrt(board.length).to_i
     array = []
     while i < board.length
-       array << "|_" + board[i..i+row_length-1].join("_|_") + "_|"
+       array << "_" + board[i..i+row_length-1].join("_|_") + "_"
       i += row_length
     end
     array
@@ -48,7 +48,7 @@ class View
   end
 
   def starting_player(players)
-    "Enter corresponding number for starting player\n1.\t#{players[0].name.capitalize}\n2.\t#{players[1].name.capitalize}"
+    "Enter corresponding number to select players order:\n1.\t#{players[0].name.capitalize}\n2.\t#{players[1].name.capitalize}"
   end
 
   def spot_selection(player, spot)

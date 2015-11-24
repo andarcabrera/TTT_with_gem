@@ -96,5 +96,4 @@ class Game
   def dotted_line
     @output.print(@view.dotted_line)
   end
-
 end
