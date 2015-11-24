@@ -1,6 +1,7 @@
 class Board
 
   def initialize(markers = [], size = 9)
+    @size = size
     @surface = (0..size-1).map{|el| el.to_s}
     @markers = markers
   end
@@ -47,6 +48,10 @@ class Board
 
   def set_surface(surface)
     @surface = surface
+  end
+
+  def set_size(size)
+    @size = size
   end
 
   private
