@@ -28,7 +28,7 @@ class View
   end
 
   def move_prompt(player)
-    "Please select your spot, #{player.name}."
+    "Please select your spot, #{player.name.capitalize}."
   end
 
   def invalid_entry_spot

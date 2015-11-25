@@ -1,7 +1,7 @@
 module AlphaBetaNegamax
 
   def alpha_beta_negamax(board, depth, alpha = - Float::INFINITY, beta = Float::INFINITY)
-    return board.available_spots.sample if board.available_spots.count >= 13
+    return board.available_spots.sample if board.available_spots.count > 13
     best_score = {}
 
     return 0 if board.tied_board?
