@@ -55,5 +55,26 @@ describe ComputerPlayer do
 
       expect(computer.pick_spot(board)).to eq('4')
     end
+
+    it 'picks spot number 4 if all spots on the board are available when board is 4x4' do
+      board = Board.new(['X', 'Y'], 16)
+      board.set_surface(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"])
+
+      expect(computer.pick_spot(board).to_i).to be_between(0, 15).inclusive
+    end
+
+    it 'prevents opponent from winning in a 4X4 board' do
+      board = Board.new(['X', 'Y'], 16)
+      board.set_surface(["X", "X", "X", "3", "4", "X", "6", "Y", "8", "Y", "10", "Y", "12", "13", "14", "15"])
+
+      expect(computer.pick_spot(board)).to eq('3')
+    end
+
+    it 'makes the winning move if available' do
+      board = Board.new(['X', 'Y'], 16)
+      board.set_surface(["X", "1", "X", "3", "Y", "Y", "6", "Y", "X", "Y", "10", "Y", "X", "13", "14", "15"])
+
+      expect(computer.pick_spot(board)).to eq('6')
+    end
   end
 end

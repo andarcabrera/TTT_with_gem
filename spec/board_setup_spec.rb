@@ -6,7 +6,7 @@ describe BoardSetup do
 
   let(:input) { double('input')}
   let(:output) { double('output', :print => nil)}
-  let(:view) { double('view', :ask_for_board_setup => nil, :invalid_entry => nil)}
+  let(:view) { double('view', :ask_for_board_setup => nil, :invalid_entry => nil, :welcome => nil)}
 
   let(:setup) { BoardSetup.new(input, output, view) }
   describe "#board_size" do

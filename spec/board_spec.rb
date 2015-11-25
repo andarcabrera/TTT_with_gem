@@ -134,4 +134,12 @@ describe Board do
       expect(board.markers).to eq(["D", "G"])
     end
   end
+
+  describe "#set_size" do
+    it 'sets board markers do' do
+      board.set_size(16)
+
+      expect(board.size).to eq(16)
+    end
+  end
 end

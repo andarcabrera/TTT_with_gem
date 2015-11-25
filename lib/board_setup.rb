@@ -7,6 +7,7 @@ class BoardSetup
   end
 
   def board_size
+    @output.print(@view.welcome)
     selection == '1' ? 9 : 16
   end
 

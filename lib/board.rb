@@ -50,6 +50,10 @@ class Board
     @surface = surface
   end
 
+  def size
+    @size
+  end
+
   def set_size(size)
     @size = size
   end
