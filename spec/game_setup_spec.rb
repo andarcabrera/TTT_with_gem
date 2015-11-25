@@ -6,7 +6,7 @@ describe GameSetup do
 
   let(:input) { double('input') }
   let(:output) { double('output', :print => nil) }
-  let(:view) { double('view', :select_game_type => nil, :welcome => nil, :invalid_entry => nil) }
+  let(:view) { double('view', :select_game_type => nil, :welcome => nil, :invalid_entry_game_type => nil) }
   let(:setup) { GameSetup.new(input, output, view) }
 
   describe "#select_game_type" do

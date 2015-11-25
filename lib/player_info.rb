@@ -37,7 +37,7 @@ class PlayerInfo
     @output.print(@view.ask_for_name)
     name = @input.get_user_input
     until name != ""
-      @output.print(@view.ask_for_name)
+      @output.print(@view.invalid_entry_name)
       name = @input.get_user_input
     end
     name
@@ -52,7 +52,7 @@ class PlayerInfo
         @markers << marker
       else
         marker = nil
-        @output.print(@view.invalid_entry)
+        @output.print(@view.invalid_entry_marker)
       end
     end
     marker

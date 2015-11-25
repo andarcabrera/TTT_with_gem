@@ -23,7 +23,7 @@ class BoardSetup
       elsif user_choice == '2'
         break
       else
-        @output.print(@view.invalid_entry)
+        @output.print(@view.invalid_entry_board_size)
         user_choice = nil
       end
     end

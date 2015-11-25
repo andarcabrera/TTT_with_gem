@@ -19,7 +19,7 @@ class PlayerFactory
         current_players = current_players.reverse
         break
       else
-        @output.print(@view.invalid_entry)
+        @output.print(@view.invalid_entry_player_order)
         user_choice = nil
       end
     end

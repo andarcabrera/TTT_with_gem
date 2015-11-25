@@ -1,14 +1,14 @@
 require_relative 'player'
-require_relative '../strategies/minimax'
+# require_relative '../strategies/minimax'
+# require_relative '../strategies/alpha_beta_minimax'
 require_relative '../strategies/negamax'
-require_relative '../strategies/alpha_beta_minimax'
 require_relative '../strategies/alpha_beta_negamax'
 
 class ComputerPlayer < Player
 
-  include Minimax
+  # include Minimax
+  # include AlphaBetaMinimax
   include Negamax
-  include AlphaBetaMinimax
   include AlphaBetaNegamax
 
   def pick_spot(board)
@@ -26,7 +26,6 @@ class ComputerPlayer < Player
   #     alpha_beta_minimax(board, depth = 0)
   #   end
   # end
-
 
   private
 

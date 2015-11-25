@@ -7,7 +7,7 @@ describe PlayerInfo do
 
   let(:input) { double('input') }
   let(:output) { double('output', :print => nil) }
-  let(:view) { double('view', :ask_for_name => nil, :ask_for_marker => nil, :invalid_entry => nil) }
+  let(:view) { double('view', :ask_for_name => nil, :ask_for_marker => nil, :invalid_entry_name => nil, :invalid_entry_marker => nil) }
   let(:setup) { double('setup') }
   let(:info) { PlayerInfo.new(input, output, view, setup) }
 

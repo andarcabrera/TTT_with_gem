@@ -31,8 +31,28 @@ class View
     "Please select your spot, #{player.name}."
   end
 
-  def invalid_entry
-    "That is not a valid entry. Please select a valid entry."
+  def invalid_entry_spot
+    "That is an invalid spot. Please select an available spot."
+  end
+
+  def invalid_entry_board_size
+    "That is not a valid entry. Please select option 1 or 2 and press enter."
+  end
+
+  def invalid_entry_game_type
+    "That is not a valid entry. Please select option 1, 2 or 3 and press enter."
+  end
+
+  def invalid_entry_name
+    "That is not a valid entry. Please enter player name."
+  end
+
+  def invalid_entry_marker
+    "That is not a valid entry. Please select a valid marker."
+  end
+
+  def invalid_entry_player_order
+    "That is not a valid entry. Please select option 1 or 2 and press enter."
   end
 
   def ask_for_name

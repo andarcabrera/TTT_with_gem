@@ -7,7 +7,7 @@ describe HumanPlayer do
 
   let(:input) { double('input') }
   let(:output) { double('output', :move_prompt => nil, :print => nil) }
-  let(:view) { double('view', :move_prompt => nil, :invalid_entry => nil) }
+  let(:view) { double('view', :move_prompt => nil, :invalid_entry_spot => nil) }
   let(:player) { HumanPlayer.new(['Anda', 'X'], input, output, view) }
   let(:board) { Board.new(['X', 'Y']) }
 

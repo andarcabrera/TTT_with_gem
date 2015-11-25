@@ -12,7 +12,7 @@ class GameSetup
     until valid_selection?(selection)
       selection = @input.get_user_input
       if !valid_selection?(selection)
-        @output.print(@view.invalid_entry)
+        @output.print(@view.invalid_entry_game_type)
       end
     end
     selection

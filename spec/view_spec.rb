@@ -13,9 +13,39 @@ describe View do
     end
   end
 
-  describe "#invalid_entry" do
+  describe "#invalid_entry_spot" do
     it 'displays an invalid spot warning' do
-      expect(view.invalid_entry).to eq("That is not a valid entry. Please select a valid entry.")
+      expect(view.invalid_entry_spot).to eq("That is an invalid spot. Please select an available spot.")
+    end
+  end
+
+  describe "#invalid_entry_board_size" do
+    it 'returns invalid selection message for board size' do
+      expect(view.invalid_entry_board_size).to eq("That is not a valid entry. Please select option 1 or 2 and press enter.")
+    end
+  end
+
+  describe "#invalid_entry_game_type" do
+    it 'returns invalid selection message for game type' do
+      expect(view.invalid_entry_game_type).to eq("That is not a valid entry. Please select option 1, 2 or 3 and press enter.")
+    end
+  end
+
+  describe "#invalid_entry_name" do
+    it 'returns invalid selection message for player name' do
+      expect(view.invalid_entry_name).to eq("That is not a valid entry. Please enter player name.")
+    end
+  end
+
+  describe "#invalid_entry_marker" do
+    it 'returns invalid selection message for marker' do
+      expect(view.invalid_entry_marker).to eq("That is not a valid entry. Please select a valid marker.")
+    end
+  end
+
+  describe "#invalid_entry_player_order" do
+    it 'returns invalid selection message for player order selection' do
+      expect(view.invalid_entry_player_order).to eq("That is not a valid entry. Please select option 1 or 2 and press enter.")
     end
   end
 
