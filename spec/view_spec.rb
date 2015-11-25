@@ -128,8 +128,7 @@ describe View do
   describe "#board_to_s" do
     it 'displays the board' do
       board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
-      expect(view.board_to_s(board).count).to eq(3)
-      expect(view.board_to_s(board)).to include("_0_|_1_|_2_", "_3_|_4_|_5_", "_6_|_7_|_8_")
+      expect(view.board_to_s(board)).to include("", "\e[4m\e[1m\e[34m | 0 |  1 |  2 | \e[0m", "\e[34m |   |    |    |\e[0m", "\e[4m\e[1m\e[34m | 3 |  4 |  5 | \e[0m", "\e[34m |   |    |    |\e[0m", "\e[4m\e[1m\e[34m | 6 |  7 |  8 | \e[0m", "")
     end
   end
 

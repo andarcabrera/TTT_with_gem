@@ -12,7 +12,6 @@ class Game
 
   def play_game
     show_board
-    dotted_line
     set_markers
     take_turns
     announce_winner

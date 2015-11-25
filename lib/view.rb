@@ -1,14 +1,27 @@
 class View
 
+  require 'rainbow'
+
   def board_to_s(board)
-    i = 0
-    row_length = Math.sqrt(board.length).to_i
-    array = []
-    while i < board.length
-       array << "_" + board[i..i+row_length-1].join("_|_") + "_"
-      i += row_length
-    end
-    array
+      i = 0
+      row_length = Math.sqrt(board.length).to_i
+      array = [""]
+      while i < board.length
+        line = board[i..i+row_length-1].map do |spot|
+          if spot.to_i < 10
+            " " + spot.to_s + " | "
+          elsif spot.to_i >= 10
+            spot.to_s + " | "
+          end
+        end
+          array << Rainbow(" |" + line.join("")).underline.bright.blue
+        if array.length < ((row_length * 2) - 1)
+          array << Rainbow(" |"  + "   | " * (row_length - 1) + "   |").blue
+        end
+        i += row_length
+      end
+      array << ""
+      array
   end
 
   def welcome
