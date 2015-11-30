@@ -7,19 +7,18 @@ class View
       row_length = Math.sqrt(board.length).to_i
       array = [""]
       while i < board.length
+        array << Rainbow(" |"  + "   | " * (row_length - 1) + "   |").blue
         line = board[i..i+row_length-1].map do |spot|
           if spot.to_i < 10
-            " " + spot.to_s + " | "
+            Rainbow(" " + spot.to_s + " | ").underline.bright.blue
           elsif spot.to_i >= 10
-            spot.to_s + " | "
+            Rainbow(spot.to_s + " | ").underline.bright.blue
           end
         end
           array << Rainbow(" |" + line.join("")).underline.bright.blue
-        if array.length < ((row_length * 2) - 1)
-          array << Rainbow(" |"  + "   | " * (row_length - 1) + "   |").blue
-        end
         i += row_length
       end
+      array << Rainbow(" |"  + "   | " * (row_length - 1) + "   |").blue
       array << ""
       array
   end

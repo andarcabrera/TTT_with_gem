@@ -1,6 +1,7 @@
 module AlphaBetaMinimax
   def alpha_beta_minimax(board, depth = 0, alpha = - Float::INFINITY, beta = Float::INFINITY)
-    return board.available_spots.sample if board.available_spots.count > 13
+    return board.available_spots.sample if board.available_spots.count >= 13 && board.size == 16
+    return '4' if board.available_spots.count == 9 && board.size == 9
     if board.next_marker == self.marker
       alpha_beta_max(board, depth, alpha, beta)
     else

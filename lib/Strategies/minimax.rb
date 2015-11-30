@@ -43,4 +43,5 @@ module Minimax
 
     depth == 0 ? best_spot : min_score
   end
+
 end

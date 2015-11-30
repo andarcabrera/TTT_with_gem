@@ -12,19 +12,11 @@ class ComputerPlayer < Player
   include AlphaBetaNegamax
 
   def pick_spot(board)
-    if board.size == 9
-      negamax(board, depth = 0)
-    elsif board.size == 16
-      alpha_beta_negamax(board, depth = 0)
-    end
+    alpha_beta_negamax(board, depth = 0)
   end
 
   # def pick_spot(board)
-  #   if board.size == 9
-  #     minimax(board, depth = 0)
-  #   elsif board.size == 16
-  #     alpha_beta_minimax(board, depth = 0)
-  #   end
+  #   alpha_beta_minimax(board, depth = 0)
   # end
 
   private
