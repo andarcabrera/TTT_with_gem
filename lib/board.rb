@@ -58,6 +58,10 @@ class Board
     @size = size
   end
 
+  def clone
+    Board.new(self.surface.clone, self.hot_goods.clone)
+  end
+
   private
 
   def row_solved?

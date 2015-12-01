@@ -21,6 +21,10 @@ module AlphaBetaNegamax
       reset_spot(board, available_spot)
     end
 
+    p "depth"
+    p depth
+    p best_score
+
     best_spot = best_score.max_by { |key, value| value }[0].to_s
     max_score = best_score.max_by { |key, value| value }[1].to_i
 
