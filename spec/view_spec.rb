@@ -126,9 +126,9 @@ describe View do
   end
 
   describe "#board_to_s" do
-    xit 'displays the board' do
+    it 'displays the board' do
       board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
-      expect(view.board_to_s(board)).to include("", "\e[4m\e[1m\e[34m | 0 |  1 |  2 | \e[0m", "\e[34m |   |    |    |\e[0m", "\e[4m\e[1m\e[34m | 3 |  4 |  5 | \e[0m", "\e[34m |   |    |    |\e[0m", "\e[4m\e[1m\e[34m | 6 |  7 |  8 | \e[0m", "")
+      expect(view.board_to_s(board)).to include("", "\e[34m |   |    |    |\e[0m", "\e[4m\e[1m\e[34m |\e[4m\e[1m\e[34m 0 | \e[0m\e[4m\e[1m\e[34m 1 | \e[0m\e[4m\e[1m\e[34m 2 | \e[0m", "\e[34m |   |    |    |\e[0m", "\e[4m\e[1m\e[34m |\e[4m\e[1m\e[34m 3 | \e[0m\e[4m\e[1m\e[34m 4 | \e[0m\e[4m\e[1m\e[34m 5 | \e[0m", "\e[34m |   |    |    |\e[0m", "\e[4m\e[1m\e[34m |\e[4m\e[1m\e[34m 6 | \e[0m\e[4m\e[1m\e[34m 7 | \e[0m\e[4m\e[1m\e[34m 8 | \e[0m", "\e[34m |   |    |    |\e[0m", "")
     end
   end
 

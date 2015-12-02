@@ -72,7 +72,7 @@ describe ComputerPlayer do
 
     it 'makes the winning move if available' do
       board = Board.new(['X', 'Y'], 16)
-      board.set_surface(["X", "1", "X", "3", "Y", "Y", "6", "Y", "X", "Y", "10", "Y", "X", "13", "14", "15"])
+      board.set_surface(["X", "1", "X", "3", "Y", "Y", "6", "Y", "X", "9", "10", "Y", "X", "13", "14", "15"])
 
       expect(computer.pick_spot(board)).to eq('6')
     end

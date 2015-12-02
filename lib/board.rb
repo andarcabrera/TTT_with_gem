@@ -27,10 +27,18 @@ class Board
   end
 
   def next_marker
-   if available_spots.count.even?
-      markers[1]
+    if size.odd?
+     if available_spots.count.even?
+        markers[1]
+      else
+        markers[0]
+      end
     else
-      markers[0]
+      if available_spots.count.even?
+        markers[0]
+      else
+        markers[1]
+      end
     end
   end
 
@@ -56,10 +64,6 @@ class Board
 
   def set_size(size)
     @size = size
-  end
-
-  def clone
-    Board.new(self.surface.clone, self.hot_goods.clone)
   end
 
   private

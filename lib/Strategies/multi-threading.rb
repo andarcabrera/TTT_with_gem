@@ -1,6 +1,5 @@
 module MultiThreading
 
-require 'pry'
   def multi_threading(board)
     return board.available_spots.sample if board.available_spots.count >= 13 && board.size == 16
     return '4' if board.available_spots.count == 9 && board.size == 9
@@ -47,11 +46,5 @@ require 'pry'
 
     depth == 0 ? best_spot : max_score
   end
-
-
-  def reset_spot(board, spot)
-    board.fill_spot(spot, spot)
-  end
-
 end
 
