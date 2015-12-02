@@ -1,4 +1,5 @@
 require_relative 'player'
+
 # require_relative '../strategies/minimax'
 # require_relative '../strategies/alpha_beta_minimax'
 # require_relative '../strategies/negamax'

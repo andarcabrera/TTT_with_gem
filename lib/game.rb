@@ -1,3 +1,5 @@
+require 'benchmark'
+
 class Game
 
   attr_reader :players
