@@ -8,4 +8,5 @@ group :test do
   gem 'simplecov'
 end
 
-gem 'rainbow'
+gem 'colorize'
+gem 'ttt', :git => 'https://github.com/andarcabrera/ttt_gem.git'

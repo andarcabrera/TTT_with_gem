@@ -22,7 +22,7 @@ class Game
   def take_turns
     until game_over?
       players.each do |player|
-        move(player)
+        @output.print(Benchmark.realtime { move(player) })
         show_board
         dotted_line
         break if game_over?

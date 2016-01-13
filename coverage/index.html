@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-02T14:34:33-06:00">2015-12-02T14:34:33-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-04T08:08:47-06:00">2015-12-04T08:08:47-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5932.45
+         5935.45
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>13</b> files in total.
-    <b>336</b> relevant lines. 
-    <span class="green"><b>336</b> lines covered</span> and
+    <b>334</b> relevant lines. 
+    <span class="green"><b>334</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -77,7 +77,7 @@
         <td>59</td>
         <td>59</td>
         <td>0</td>
-        <td>9.3</td>
+        <td>9.7</td>
       </tr>
       
       <tr>
@@ -163,11 +163,11 @@
       <tr>
         <td class="strong"><a href="#cf866fed618e00b85a9bbefcbabcb07e0b8c30a0" class="src_link" title="lib/strategies/multi-threading.rb">lib/strategies/multi-threading.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>50</td>
-        <td>31</td>
-        <td>31</td>
+        <td>47</td>
+        <td>29</td>
+        <td>29</td>
         <td>0</td>
-        <td>4874.3</td>
+        <td>4835.0</td>
       </tr>
       
       <tr>
@@ -1218,10 +1218,10 @@
           <code class="ruby">      players.each do |player|</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="25">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="38" data-linenumber="25">
+          <span class="hits">38</span>
           
-          <code class="ruby">        move(player)</code>
+          <code class="ruby">        @output.print(Benchmark.realtime { move(player) })</code>
         </li>
       
         <li class="covered" data-hits="19" data-linenumber="26">
@@ -3165,8 +3165,8 @@
     <h3>lib/strategies/multi-threading.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>31</b> relevant lines. 
-      <span class="green"><b>31</b> lines covered</span> and
+      <b>29</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3195,7 +3195,7 @@
         <li class="covered" data-hits="10" data-linenumber="4">
           <span class="hits">10</span>
           
-          <code class="ruby">    return board.available_spots.sample if board.available_spots.count &gt; 13 &amp;&amp; board.size == 16</code>
+          <code class="ruby">    return board.available_spots.sample if board.available_spots.count &gt;= 13 &amp;&amp; board.size == 16</code>
         </li>
       
         <li class="covered" data-hits="9" data-linenumber="5">
@@ -3435,40 +3435,22 @@
         <li class="covered" data-hits="8457" data-linenumber="44">
           <span class="hits">8457</span>
           
-          <code class="ruby">    best_spot = best_score.max_by { |key, value| value }[1].to_i</code>
-        </li>
-      
-        <li class="covered" data-hits="8457" data-linenumber="45">
-          <span class="hits">8457</span>
-          
           <code class="ruby">    max_score = best_score.max_by { |key, value| value }[1].to_i</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="2431" data-linenumber="47">
-          <span class="hits">2431</span>
-          
-          <code class="ruby">    depth == 0 ? best_spot : max_score</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby"></code>
