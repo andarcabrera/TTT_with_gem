@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/andarcabrera/ttt_gem.git
-  revision: 08baba62f25d5111a9bdd2a9643c41682a69e183
+  revision: 6dff9e016013ff0e75e764d050dada6c11c09bc3
   specs:
     ttt (0.0.0)
 
