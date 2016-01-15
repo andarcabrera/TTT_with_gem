@@ -1,12 +1,12 @@
 require 'rspec'
 require 'spec_helper'
+require 'ttt'
 require_relative '../lib/game'
-require_relative '../lib/board'
 
 describe Game do
 
   let(:markers) { ['X', 'Y'] }
-  let(:board) { Board.new(markers) }
+  let(:board) { TTT::Board.new(markers) }
   let(:player1) { double('player1', :marker => 'X') }
   let(:player2) { double('player2', :marker => 'Y') }
   let(:factory) { double('factory', :players => [player1, player2]) }

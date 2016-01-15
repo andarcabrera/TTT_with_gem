@@ -1,7 +1,7 @@
 require 'rspec'
 require 'spec_helper'
+require 'ttt'
 require_relative '../lib/players/human_player'
-require_relative '../lib/board'
 
 describe HumanPlayer do
 
@@ -9,7 +9,7 @@ describe HumanPlayer do
   let(:output) { double('output', :move_prompt => nil, :print => nil) }
   let(:view) { double('view', :move_prompt => nil, :invalid_entry_spot => nil) }
   let(:player) { HumanPlayer.new(['Anda', 'X'], input, output, view) }
-  let(:board) { Board.new(['X', 'Y']) }
+  let(:board) { TTT::Board.new(['X', 'Y']) }
 
   describe '#pick_spot' do
     it 'picks a spot to place its marker' do

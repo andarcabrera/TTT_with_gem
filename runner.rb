@@ -1,6 +1,5 @@
 require 'ttt'
 require_relative 'lib/game'
-require_relative 'lib/board'
 require_relative 'lib/players/human_player'
 require_relative 'lib/players/computer_player'
 require_relative 'lib/player_factory'
