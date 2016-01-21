@@ -1,4 +1,6 @@
 require 'benchmark'
+require 'ttt'
+require 'ttt_db'
 
 class Game
 
@@ -16,16 +18,17 @@ class Game
     show_board
     set_markers
     take_turns
+    GameDB::SequelCon.add_game(@board.surface, @board.markers)
     announce_winner
   end
 
   def take_turns
-    until game_over?
+    until TTT::Game.game_over?(@board)
       players.each do |player|
         @output.print(Benchmark.realtime { move(player) })
         show_board
         dotted_line
-        break if game_over?
+        break if TTT::Game.game_over?(@board)
       end
     end
   end
@@ -56,10 +59,6 @@ class Game
 
   def set_surface(surface)
     @board.set_surface(surface)
-  end
-
-  def game_over?
-    @board.solved_board? != nil || @board.tied_board?
   end
 
   def winner

@@ -10,6 +10,8 @@ require_relative 'lib/input'
 require_relative 'lib/output'
 require_relative 'lib/view'
 
+system( "create_db" )
+
 input = Input.new
 output = Output.new
 view = View.new

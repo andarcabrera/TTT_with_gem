@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/andarcabrera/ttt_gem.git
-  revision: 6dff9e016013ff0e75e764d050dada6c11c09bc3
+  revision: 2b01331baf809fb0cfc243dc1a25280a181f54ba
   specs:
     ttt (0.0.0)
 
@@ -11,6 +11,7 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     json (1.8.3)
+    pg (0.18.4)
     rake (10.5.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -25,21 +26,26 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
+    sequel (4.30.0)
     simplecov (0.11.1)
       docile (~> 1.1.0)
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    ttt_db (0.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   colorize
+  pg
   rake
   rspec
+  sequel
   simplecov
   ttt!
+  ttt_db
 
 BUNDLED WITH
    1.11.2
