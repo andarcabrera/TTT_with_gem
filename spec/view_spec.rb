@@ -80,7 +80,7 @@ describe View do
 
   describe "#winner_message" do
     it 'announces the winner' do
-      player = double('player', :name => "Anda")
+      player = {:name => "Anda"}
 
       expect(view.winner_message(player)).to eq("Anda won the game!")
     end
@@ -95,7 +95,7 @@ describe View do
 
   describe "#spot_selection" do
     it 'announces the spot selected' do
-      player = double('player', :name => "Anda")
+      player = {:name => "Anda"}
       spot = '1'
 
       expect(view.spot_selection(player, spot)).to eq("Anda selected spot # 1")

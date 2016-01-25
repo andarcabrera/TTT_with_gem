@@ -1,7 +1,6 @@
 require 'ttt'
-require_relative 'lib/game'
-require_relative 'lib/players/human_player'
-require_relative 'lib/players/computer_player'
+require_relative 'lib/console_game'
+require_relative 'lib/human_move'
 require_relative 'lib/player_factory'
 require_relative 'lib/player_info'
 require_relative 'lib/game_setup'
@@ -19,9 +18,10 @@ setup = GameSetup.new(input, output, view)
 board_setup = BoardSetup.new(input, output, view)
 info = PlayerInfo.new(input, output, view, setup)
 factory = PlayerFactory.new(input, output, view, info)
-board = TTT::Board.new([], board_setup.board_size)
+human_move = HumanMove.new(input, output, view)
+ttt_game = TTT::Game.new(factoy.player, human_move, board_setup.board_size)
 
-args = {:board => board, :view => view, :output => output, :factory => factory}
+args = {:ttt_game => ttt_game, :input => input, :view => view, :output => output}
 
-game = Game.new(args)
+game = ConsoleGame.new(args)
 game.play_game

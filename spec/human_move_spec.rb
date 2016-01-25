@@ -9,7 +9,7 @@ describe HumanMove do
   let(:output) { double('output', :move_prompt => nil, :print => nil) }
   let(:view) { double('view', :move_prompt => nil, :invalid_entry_spot => nil) }
   let(:board) { double 'board' }
-  let(:human_move) { HumanMove.new(board, input, output, view) }
+  let(:human_move) { HumanMove.new(input, output, view) }
 
   describe '#pick_spot' do
     it 'picks a spot to place its marker' do

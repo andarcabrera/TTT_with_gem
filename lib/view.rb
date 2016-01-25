@@ -86,11 +86,11 @@ class View
   end
 
   def spot_selection(player, spot)
-    "#{player.name.capitalize} selected spot # #{spot.to_i}"
+    "#{player[:name].capitalize} selected spot # #{spot.to_i}"
   end
 
   def winner_message(winner)
-    "#{winner.name.capitalize} won the game!"
+    "#{winner[:name].capitalize} won the game!"
   end
 
   def tied_message
