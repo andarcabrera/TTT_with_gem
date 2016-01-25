@@ -32,7 +32,7 @@ describe Game do
     end
   end
 
-  describe '#game_over?' do
+  xdescribe '#game_over?' do
     context 'it checks if the game is finished' do
       it 'checks if the game was won by one of the players' do
          surface = ["X", "X", "X", "Y", "4", "Y", "6", "7", "8"]

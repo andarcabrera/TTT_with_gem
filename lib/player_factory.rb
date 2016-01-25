@@ -32,9 +32,9 @@ class PlayerFactory
     players_array = []
     player_info.each do |info|
       if info[0] == "computer"
-        players_array << ComputerPlayer.new(info, @input, @output, @view)
+        players_array << {:name => "computer", :marker => info[1], :type => "computer"}
       else
-        players_array << HumanPlayer.new(info, @input, @output, @view)
+        players_array << {:name => info[0], :marker => info[1], :type => "human"}
       end
     end
     players_array

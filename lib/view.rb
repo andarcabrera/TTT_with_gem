@@ -37,8 +37,8 @@ class View
                        |__|      \______/  |_______|   "
   end
 
-  def move_prompt(player)
-    "Please select your spot, #{player.name.capitalize}."
+  def move_prompt
+    "Please select your spot."
   end
 
   def invalid_entry_spot
@@ -82,7 +82,7 @@ class View
   end
 
   def starting_player(players)
-    "Enter corresponding number to select players order:\n1.\t#{players[0].name.capitalize}\n2.\t#{players[1].name.capitalize}"
+    "Enter corresponding number to select players order:\n1.\t#{players[0][:name].capitalize}\n2.\t#{players[1][:name].capitalize}"
   end
 
   def spot_selection(player, spot)

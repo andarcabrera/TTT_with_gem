@@ -1,28 +1,29 @@
 require 'rspec'
 require 'spec_helper'
 require 'ttt'
-require_relative '../lib/players/human_player'
+require_relative '../lib/human_move'
 
-describe HumanPlayer do
+describe HumanMove do
 
   let(:input) { double('input') }
   let(:output) { double('output', :move_prompt => nil, :print => nil) }
   let(:view) { double('view', :move_prompt => nil, :invalid_entry_spot => nil) }
-  let(:player) { HumanPlayer.new(['Anda', 'X'], input, output, view) }
-  let(:board) { TTT::Board.new(['X', 'Y']) }
+  let(:board) { double 'board' }
+  let(:human_move) { HumanMove.new(board, input, output, view) }
 
   describe '#pick_spot' do
     it 'picks a spot to place its marker' do
       allow(input).to receive(:get_user_input).and_return('1')
+      allow(board).to receive(:available_spots).and_return(['1', '2'])
 
-      expect(player.pick_spot(board)).to eq('1')
+      expect(human_move.pick_spot(board)).to eq('1')
     end
 
-    it 'picks an available spot on the board' do
-      board.set_surface(["X", "Y", "X", "X", "4", "5", "6", "7", "Y"])
-
+    it 'requests a spot choice until a valid spot is provided' do
       allow(input).to receive(:get_user_input).and_return('1', '2', '3', '4')
-      expect(player.pick_spot(board)).to eq('4')
+      allow(board).to receive(:available_spots).and_return(['4', '5'])
+
+      expect(human_move.pick_spot(board)).to eq('4')
     end
   end
 
