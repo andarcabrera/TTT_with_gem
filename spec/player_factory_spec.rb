@@ -7,7 +7,7 @@ describe PlayerFactory do
   let(:info) { double('info') }
   let(:input) { double('input') }
   let(:output) { double('output', :print => nil) }
-  let(:view) { double('view', :starting_player => nil, :invalid_entry_player_order => nil) }
+  let(:view) { double('view', :starting_player => nil, :invalid_entry_player_order => nil, :welcome => nil) }
 
   describe '#players' do
     it 'creates a player for each player_info information set' do

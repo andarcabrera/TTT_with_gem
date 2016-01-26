@@ -8,6 +8,7 @@ class PlayerFactory
   end
 
   def players
+    @output.print(@view.welcome)
     current_players = players_array
     user_choice = nil
     while !valid_choice?(user_choice)

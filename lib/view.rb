@@ -85,8 +85,8 @@ class View
     "Enter corresponding number to select players order:\n1.\t#{players[0][:name].capitalize}\n2.\t#{players[1][:name].capitalize}"
   end
 
-  def spot_selection(player, spot)
-    "#{player[:name].capitalize} selected spot # #{spot.to_i}"
+  def spot_selection(player_name, spot)
+    "#{player_name} selected spot # #{spot.to_i}"
   end
 
   def winner_message(winner)

@@ -25,7 +25,7 @@ class ConsoleGame
         @ttt_game.make_move(spot)
         show_board
         dotted_line
-        @output.print(@view.spot_selection(current_player_name, spot))
+        @output.print(@view.spot_selection(previous_player_name, spot))
         break if @ttt_game.game_over?
     end
   end
@@ -40,8 +40,8 @@ class ConsoleGame
 
   private
 
-  def current_player_name
-    @ttt_game.current_player[:name]
+  def previous_player_name
+    @ttt_game.previous_player[:name]
   end
 
   def show_board

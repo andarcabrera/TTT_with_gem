@@ -95,7 +95,7 @@ describe View do
 
   describe "#spot_selection" do
     it 'announces the spot selected' do
-      player = {:name => "Anda"}
+      player = "Anda"
       spot = '1'
 
       expect(view.spot_selection(player, spot)).to eq("Anda selected spot # 1")

@@ -19,7 +19,7 @@ board_setup = BoardSetup.new(input, output, view)
 info = PlayerInfo.new(input, output, view, setup)
 factory = PlayerFactory.new(input, output, view, info)
 human_move = HumanMove.new(input, output, view)
-ttt_game = TTT::Game.new(factoy.player, human_move, board_setup.board_size)
+ttt_game = TTT::Game.new(factory.players, human_move, board_setup.board_size)
 
 args = {:ttt_game => ttt_game, :input => input, :view => view, :output => output}
 

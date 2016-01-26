@@ -25,6 +25,7 @@ describe ConsoleGame do
 
         expect(g.playing_surface).to eq(["X", "X", "X", "Y", "Y", "5", "6", "7", "8"])
        end
+     end
 
        it 'prompts each player to move until the game ends in a tie' do
         allow(ttt_game).to receive(:selected_spot).and_return(3)
@@ -42,13 +43,14 @@ describe ConsoleGame do
         allow(ttt_game).to receive(:current_state).and_return(["X", "X", "X", "Y", "Y", "5", "6", "7", "8"])
         allow(ttt_game).to receive(:game_over?).and_return(false, false, false, true)
         allow(ttt_game).to receive(:make_move)
-        allow(ttt_game).to receive(:current_player).and_return({:name => "Anda"})
+        allow(ttt_game).to receive(:previous_player).and_return({:name => "Anda"})
         allow(ttt_game).to receive(:game_winner).and_return("Anda")
 
         g.play_game
 
         expect(g.playing_surface).to eq(["X", "X", "X", "Y", "Y", "5", "6", "7", "8"])
    end
+ end
 
   describe "#selected_spot" do
     it 'returns a spot using the ttt_gem' do
@@ -57,7 +59,4 @@ describe ConsoleGame do
       expect(g.selected_spot).to eq(3)
      end
    end
-
-  end
-
 end
