@@ -82,7 +82,7 @@ class View
   end
 
   def starting_player(players)
-    "Enter corresponding number to select players order:\n1.\t#{players[0][:name].capitalize}\n2.\t#{players[1][:name].capitalize}"
+    "Enter corresponding number to select players order:\n1.\t#{players[0].name.capitalize}\n2.\t#{players[1].name.capitalize}"
   end
 
   def spot_selection(player_name, spot)
@@ -90,7 +90,7 @@ class View
   end
 
   def winner_message(winner)
-    "#{winner[:name].capitalize} won the game!"
+    "#{winner.name.capitalize} won the game!"
   end
 
   def tied_message

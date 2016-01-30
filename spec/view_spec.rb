@@ -5,6 +5,8 @@ require_relative '../lib/view'
 describe View do
 
   let(:view) { View.new }
+  let(:player1) { double 'player1', :name => "Anda" }
+  let(:player2) { double 'player2', :name => "Eli" }
 
   describe "#move_prompt" do
     it 'displays a move_prompt' do
@@ -80,9 +82,8 @@ describe View do
 
   describe "#winner_message" do
     it 'announces the winner' do
-      player = {:name => "Anda"}
 
-      expect(view.winner_message(player)).to eq("Anda won the game!")
+      expect(view.winner_message(player1)).to eq("Anda won the game!")
     end
   end
 
@@ -104,8 +105,6 @@ describe View do
 
   describe "#starting_player" do
     it 'asks for confirmation of starting player' do
-      player1 = {:name => "Anda"}
-      player2 = {:name => "Eli"}
       players = [player1, player2]
 
       expect(view.starting_player(players)).to eq("Enter corresponding number to select players order:\n1.\tAnda\n2.\tEli")

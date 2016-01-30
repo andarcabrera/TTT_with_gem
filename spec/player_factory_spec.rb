@@ -26,8 +26,8 @@ describe PlayerFactory do
         allow(input).to receive(:get_user_input).and_return('1')
 
 
-        expect(factory.players[0][:type]).to eq("human")
-        expect(factory.players[1][:type]).to eq("human")
+        expect(factory.players[0].class).to eq(TTT::HumanPlayer)
+        expect(factory.players[1].class).to eq(TTT::HumanPlayer)
       end
     end
 
@@ -38,8 +38,8 @@ describe PlayerFactory do
         allow(input).to receive(:get_user_input).and_return('1')
 
 
-        expect(factory.players[0][:type]).to eq("computer")
-        expect(factory.players[1][:type]).to eq("computer")
+        expect(factory.players[0].class).to eq(TTT::ComputerPlayer)
+        expect(factory.players[1].class).to eq(TTT::ComputerPlayer)
       end
     end
 
@@ -49,8 +49,8 @@ describe PlayerFactory do
         allow(info).to receive(:player_info).and_return([['Anda', 'A'], ['computer', 'Z']])
         allow(input).to receive(:get_user_input).and_return('1')
 
-        expect(factory.players[0][:type]).to eq("human")
-        expect(factory.players[1][:type]).to eq("computer")
+        expect(factory.players[0].class).to eq(TTT::HumanPlayer)
+        expect(factory.players[1].class).to eq(TTT::ComputerPlayer)
       end
     end
 
@@ -60,7 +60,7 @@ describe PlayerFactory do
         allow(info).to receive(:player_info).and_return([['Anda', 'X'], ['computer', 'Y']])
         allow(input).to receive(:get_user_input).and_return('2')
 
-        expect(factory.players[0][:type]).to eq("computer")
+        expect(factory.players[0].class).to eq(TTT::ComputerPlayer)
       end
 
       it 'it asks for choice of starting player until it receives valid entry' do
@@ -68,7 +68,7 @@ describe PlayerFactory do
         allow(info).to receive(:player_info).and_return([['Anda', 'X'], ['computer', 'Y']])
         allow(input).to receive(:get_user_input).and_return('0', '2')
 
-        expect(factory.players[0][:type]).to eq("computer")
+        expect(factory.players[0].class).to eq(TTT::ComputerPlayer)
       end
     end
   end

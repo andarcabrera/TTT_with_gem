@@ -1,6 +1,5 @@
 require 'rspec'
 require 'spec_helper'
-require 'ttt'
 require_relative '../lib/console_game'
 
 describe ConsoleGame do
@@ -51,12 +50,4 @@ describe ConsoleGame do
         expect(g.playing_surface).to eq(["X", "X", "X", "Y", "Y", "5", "6", "7", "8"])
    end
  end
-
-  describe "#selected_spot" do
-    it 'returns a spot using the ttt_gem' do
-      allow(ttt_game).to receive(:selected_spot).and_return(3)
-
-      expect(g.selected_spot).to eq(3)
-     end
-   end
 end

@@ -1,3 +1,6 @@
+require 'ttt'
+require_relative 'user_interface'
+
 class PlayerFactory
 
   def initialize(input, output, view, info)
@@ -33,9 +36,9 @@ class PlayerFactory
     players_array = []
     player_info.each do |info|
       if info[0] == "computer"
-        players_array << {:name => "computer", :marker => info[1], :type => "computer"}
+        players_array << TTT::ComputerPlayer.new(info[0], info[1])
       else
-        players_array << {:name => info[0], :marker => info[1], :type => "human"}
+        players_array << TTT::HumanPlayer.new(info[0], info[1], UserInterface.new(@input, @output, @view))
       end
     end
     players_array
