@@ -14,5 +14,9 @@ class UserInterface
   def error
     @output.print(@view.invalid_entry_spot)
   end
+
+  def no_more_moves_allowed?
+    false
+  end
 end
 

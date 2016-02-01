@@ -8,6 +8,7 @@ describe ConsoleGame do
   let(:view) { double('view', :board_to_s => nil, :welcome => nil, :winner_message => nil, :tied_message => nil, :spot_selection => nil, :dotted_line => nil) }
   let(:output) { double('output', :print => nil) }
   let(:input) { double('input') }
+  let(:player) { double('player') }
   let(:g) { ConsoleGame.new(:ttt_game => ttt_game, :view => view, :output => output, :input => input) }
 
 
@@ -42,7 +43,8 @@ describe ConsoleGame do
         allow(ttt_game).to receive(:current_state).and_return(["X", "X", "X", "Y", "Y", "5", "6", "7", "8"])
         allow(ttt_game).to receive(:game_over?).and_return(false, false, false, true)
         allow(ttt_game).to receive(:make_move)
-        allow(ttt_game).to receive(:previous_player).and_return({:name => "Anda"})
+        allow(ttt_game).to receive(:previous_player).and_return(player)
+        allow(player).to receive(:name)
         allow(ttt_game).to receive(:game_winner).and_return("Anda")
 
         g.play_game
