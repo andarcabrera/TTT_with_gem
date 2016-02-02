@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/console_game.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/console_game.rb": [
         1,
         1,
         null,
@@ -60,7 +60,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/game_setup.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/game_setup.rb": [
         1,
         null,
         1,
@@ -86,7 +86,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/player_factory.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/player_factory.rb": [
         1,
         1,
         null,
@@ -144,7 +144,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/user_interface.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/user_interface.rb": [
         1,
         null,
         1,
@@ -168,7 +168,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/player_info.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/player_info.rb": [
         1,
         null,
         1,
@@ -243,7 +243,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/view.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/view.rb": [
         1,
         null,
         1,
@@ -349,14 +349,14 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/output.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/output.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/input.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/input.rb": [
         1,
         null,
         1,
@@ -365,7 +365,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/Programs/TTT_TDD/lib/board_setup.rb": [
+      "/Users/andacabrera29/Desktop/TTT_with_gem/lib/board_setup.rb": [
         1,
         null,
         1,
@@ -404,6 +404,6 @@
         null
       ]
     },
-    "timestamp": 1454366500
+    "timestamp": 1454386005
   }
 }
