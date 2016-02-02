@@ -1,13 +1,18 @@
 GIT
+  remote: https://github.com/andarcabrera/sequel_gem.git
+  revision: 980e0139bd6039966cb9f35e656784dc6bac64fb
+  specs:
+    ttt_db (0.0.0)
+
+GIT
   remote: https://github.com/andarcabrera/ttt_gem.git
-  revision: 460dd4697b623d0f9a6231bbba701551a7378625
+  revision: bb48e407e6ebeae29891d5ad8daf5ffc5eeb8c04
   specs:
     ttt (0.0.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    colorize (0.7.7)
     diff-lcs (1.2.5)
     docile (1.1.5)
     json (1.8.3)
@@ -32,20 +37,18 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    ttt_db (0.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  colorize
   pg
   rake
   rspec
   sequel
   simplecov
   ttt!
-  ttt_db
+  ttt_db!
 
 BUNDLED WITH
    1.11.2

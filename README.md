@@ -1,8 +1,12 @@
 # TicTacToe Game
-Ruby command line game built with TDD.
+Console TTT game using a ttt gem for the game logic.
 
 ## Requirement
 - ruby ~> 2.2.1
+- bundler ~> 1.7
+- rake
+- ttt
+- ttt_db
 - bundler ~> 1.7
 
 ## Installation
