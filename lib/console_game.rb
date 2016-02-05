@@ -24,7 +24,6 @@ class ConsoleGame
         show_board
         dotted_line
         @output.print(@view.spot_selection(previous_player_name, spot))
-        break if @ttt_game.game_over?
     end
   end
 
